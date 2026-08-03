@@ -37,17 +37,25 @@ button{font:inherit}
   color:#fff;
   position:relative;
   overflow:hidden;
-  background:
-    linear-gradient(180deg,rgba(3,18,39,.58),rgba(3,18,39,.94)),
-    url('truck.jpg') center 42%/cover no-repeat;
+  background:#061a35;
+}
+.hero:before{
+  content:"";
+  position:absolute;
+  inset:-8px;
+  background:url('truck.jpg') center 42%/cover no-repeat;
+  filter:blur(2.2px);
+  transform:scale(1.02);
+  opacity:.72;
 }
 .hero:after{
   content:"";
   position:absolute;
   inset:0;
   background:
-    radial-gradient(circle at 15% 18%,rgba(255,210,31,.16),transparent 28rem),
-    linear-gradient(90deg,rgba(6,26,53,.22),rgba(6,26,53,.02) 52%,rgba(6,26,53,.18));
+    linear-gradient(180deg,rgba(3,18,39,.48),rgba(3,18,39,.9)),
+    radial-gradient(circle at 15% 18%,rgba(255,210,31,.13),transparent 28rem),
+    linear-gradient(90deg,rgba(6,26,53,.2),rgba(6,26,53,.02) 52%,rgba(6,26,53,.18));
   pointer-events:none;
 }
 .topbar{
@@ -80,7 +88,7 @@ button{font:inherit}
   position:relative;
   z-index:2;
   text-align:center;
-  padding:28px 0 38px;
+  padding:14px 0 38px;
 }
 .logo{
   width:min(205px,54vw);
@@ -88,12 +96,12 @@ button{font:inherit}
   display:block;
   margin:0 auto 14px;
   padding:10px 12px;
-  background:rgba(255,255,255,.62);
-  border:1px solid rgba(255,255,255,.68);
+  background:rgba(255,255,255,.48);
+  border:1px solid rgba(255,255,255,.28);
   border-radius:18px;
-  box-shadow:0 10px 28px rgba(0,0,0,.24);
-  backdrop-filter:blur(14px);
-  -webkit-backdrop-filter:blur(14px);
+  box-shadow:0 8px 24px rgba(0,0,0,.18);
+  backdrop-filter:blur(16px);
+  -webkit-backdrop-filter:blur(16px);
 }
 .tag{
   color:var(--yellow);
@@ -313,19 +321,19 @@ button{font:inherit}
 
 .estimate-menu{
   position:fixed;
-  right:12px;
+  right:10px;
   bottom:10px;
   z-index:20;
   display:flex;
   flex-direction:column;
   align-items:flex-end;
-  gap:8px;
+  gap:7px;
 }
 .estimate-main{
   border:0;
-  min-height:50px;
-  padding:0 18px;
-  border-radius:16px;
+  min-height:46px;
+  padding:0 14px;
+  border-radius:14px;
   background:var(--yellow);
   color:var(--navy);
   font-weight:950;
@@ -337,9 +345,9 @@ button{font:inherit}
 }
 .estimate-options{
   display:none;
-  width:190px;
-  padding:8px;
-  border-radius:16px;
+  width:170px;
+  padding:7px;
+  border-radius:14px;
   background:rgba(6,26,53,.88);
   border:1px solid rgba(255,255,255,.16);
   backdrop-filter:blur(16px);
@@ -348,9 +356,9 @@ button{font:inherit}
 }
 .estimate-options.open{display:grid;gap:7px}
 .estimate-options a{
-  min-height:44px;
-  padding:0 12px;
-  border-radius:12px;
+  min-height:41px;
+  padding:0 10px;
+  border-radius:11px;
   color:#fff;
   background:rgba(255,255,255,.08);
   display:flex;
@@ -416,8 +424,9 @@ button{font:inherit}
   .hero-content{padding-top:24px}
   .logo{width:min(190px,52vw)}
   .contact-grid,.services,.gallery,.why-grid{grid-template-columns:1fr}
-  .estimate-menu{right:7px;bottom:7px}
-  .estimate-main{min-height:48px;padding:0 15px}
+  .estimate-menu{right:6px;bottom:6px}
+  .estimate-main{min-height:44px;padding:0 12px;font-size:.86rem}
+  .estimate-options{width:164px}
 
 }
 </style>

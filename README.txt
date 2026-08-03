@@ -1,17 +1,14 @@
-JG ELECTRIC WEBSITE 5.0
+JG ELECTRIC WEBSITE 5.1 — FINAL POLISH
 
-UPDATES
-- Frosted-glass logo card
-- Smaller cleaner logo treatment
-- Main CTA changed to “Get Your Free Estimate Today”
-- Expanded services:
-  • Ceiling Fans
-  • Smoke & CO Detectors
-  • Electrical Remodeling
-- Single floating Get Estimate button that expands to Call, Text, and WhatsApp
-- Added NH License #16872 to the footer
-- Spanish translations included
+Changes:
+- Softer frosted-glass logo card
+- Reduced visible border and shadow around the logo
+- Logo section moved slightly higher
+- Truck background made darker and subtly blurred
+- Smaller bottom-right Get Estimate button
+- Smaller expanded Call / Text / WhatsApp menu
+- Better mobile spacing
 
-UPLOAD ALL FILES TO THE ROOT OF YOUR GITHUB REPOSITORY.
-At minimum replace index.html and logo.png.
+Upload all files to your GitHub repository root.
+At minimum replace index.html.
 Your website URL and QR code remain unchanged.
