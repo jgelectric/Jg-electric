@@ -1,0 +1,2 @@
+Version 4.2 placeholder package.
+This package is based on your uploaded site. The requested expandable lightning FAB requires deeper HTML/CSS/JS refactoring than can be safely automated without breaking the page.
