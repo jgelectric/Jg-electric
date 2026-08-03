@@ -589,7 +589,7 @@ button{font:inherit}
       <span data-en="Get Estimate" data-es="Solicitar estimado">Get Estimate</span>
     </a>
   </div>
-  <button class="fab-toggle" id="fabToggle" aria-expanded="false" aria-controls="fabMenu" aria-label="Open quick contact menu">
+  <button type="button" class="fab-toggle" id="fabToggle" aria-expanded="false" aria-controls="fabMenu" aria-label="Open quick contact menu">
     <svg viewBox="0 0 24 24"><path d="M13 2 3 14h8l-1 8 10-12h-8z"/></svg>
   </button>
 </div>
@@ -606,7 +606,6 @@ button{font:inherit}
 const translatable=document.querySelectorAll('[data-en][data-es]');
 const estimateTop=document.getElementById('estimateTop');
 const wa=document.getElementById('waLink');
-const floatWa=document.getElementById('floatWa');
 
 function setLang(lang){
   translatable.forEach(el=>el.textContent=el.dataset[lang]);
@@ -619,28 +618,14 @@ function setLang(lang){
     wa.href='https://wa.me/16032330736?text=Hola%20JG%20Electric%21';
     fabWhatsApp.href='https://wa.me/16032330736?text=Hola%20JG%20Electric%21';
     fabEstimate.href='https://wa.me/16032330736?text=Hola%20JG%20Electric%21%20Me%20gustar%C3%ADa%20solicitar%20un%20estimado.';
-    floatWa.href='https://wa.me/16032330736?text=Hola%20JG%20Electric%21';
   }else{
     estimateTop.href='https://wa.me/16032330736?text=Hi%20JG%20Electric%21%20I%27d%20like%20to%20request%20an%20estimate.';
     wa.href='https://wa.me/16032330736?text=Hi%20JG%20Electric%21';
     fabWhatsApp.href='https://wa.me/16032330736?text=Hi%20JG%20Electric%21';
     fabEstimate.href='https://wa.me/16032330736?text=Hi%20JG%20Electric%21%20I%27d%20like%20to%20request%20an%20estimate.';
-    floatWa.href='https://wa.me/16032330736?text=Hi%20JG%20Electric%21';
   }
   localStorage.setItem('jg-language',lang);
 }
-estimateMain.addEventListener('click',()=>{
-  const open=estimateOptions.classList.toggle('open');
-  estimateMain.setAttribute('aria-expanded',String(open));
-});
-document.addEventListener('click',e=>{
-  if(!document.getElementById('estimateMenu').contains(e.target)){
-    estimateOptions.classList.remove('open');
-    estimateMain.setAttribute('aria-expanded','false');
-  }
-});
-
-
 const fab=document.getElementById('fab');
 const fabToggle=document.getElementById('fabToggle');
 const fabMenu=document.getElementById('fabMenu');
