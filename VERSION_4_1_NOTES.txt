@@ -1,0 +1,14 @@
+JG Electric Website v4.1
+
+Final polish included in this package:
+- Transparent logo
+- Refined hero section
+- Review stars placement
+- Trust badges
+- NH License #16872
+- English / Spanish
+- Gallery
+- Contact buttons
+- SEO metadata
+
+Upload all files to your GitHub repository and replace existing files.
