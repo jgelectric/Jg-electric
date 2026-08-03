@@ -1,28 +1,19 @@
-JG ELECTRIC WEBSITE 6.0
+JG ELECTRIC WEBSITE 6.1
 
-WHAT CHANGED
-- Added the new transparent JG Electric logo
-- Removed the white/frosted logo box
-- Added a subtle shadow and yellow glow behind the logo
-- Updated the footer logo
-- Updated the favicon
-- Kept all previous features:
-  • English / Spanish switch
-  • Google review button
-  • Free estimate button
-  • Call, text, WhatsApp, Facebook, Instagram, email, and save-contact buttons
-  • Electrical services
-  • “And much more...” message
-  • Why Choose JG Electric section
-  • Project gallery
-  • NH License #16872
-  • Floating estimate menu
+UPDATES
+- Transparent logo increased by approximately 15–20%
+- Truck background blur reduced so the vehicle is more recognizable
+- Hero text changed to:
+  Licensed Residential & Commercial Electrician serving Southern New Hampshire
+- Added a five-star review line above the Google Review button
+- Floating Get Estimate button made smaller and moved lower/right
+- Improved hero spacing
 
 UPLOAD TO GITHUB
-1. Unzip this folder.
+1. Unzip this package.
 2. Upload every file to the root of your Jg-lectric repository.
 3. Replace the existing files.
-4. Commit the changes.
-5. Wait 1–3 minutes and refresh the website.
+4. Commit changes.
+5. Wait 1–3 minutes and refresh.
 
 Your website URL and QR code remain unchanged.

@@ -44,9 +44,9 @@ button{font:inherit}
   position:absolute;
   inset:-8px;
   background:url('truck.jpg') center 42%/cover no-repeat;
-  filter:blur(2.2px);
+  filter:blur(1.25px);
   transform:scale(1.02);
-  opacity:.72;
+  opacity:.8;
 }
 .hero:after{
   content:"";
@@ -88,13 +88,13 @@ button{font:inherit}
   position:relative;
   z-index:2;
   text-align:center;
-  padding:14px 0 38px;
+  padding:18px 0 34px;
 }
 .logo{
-  width:min(220px,56vw);
+  width:min(255px,64vw);
   height:auto;
   display:block;
-  margin:0 auto 18px;
+  margin:0 auto 14px;
   padding:0;
   background:transparent;
   border:0;
@@ -106,7 +106,7 @@ button{font:inherit}
 }
 .tag{
   color:var(--yellow);
-  font-weight:950;
+  font-weight:900;
   letter-spacing:.14em;
   font-size:clamp(.95rem,3.6vw,1.17rem);
 }
@@ -122,7 +122,7 @@ button{font:inherit}
   flex-wrap:wrap;
   justify-content:center;
   gap:8px;
-  margin:0 auto 18px;
+  margin:0 auto 14px;
 }
 .trust-pill{
   padding:7px 11px;
@@ -139,6 +139,13 @@ button{font:inherit}
   gap:11px;
   max-width:580px;
   margin:0 auto;
+}
+.review-stars{
+  color:var(--yellow);
+  font-size:1.15rem;
+  letter-spacing:.18em;
+  margin:0 auto 10px;
+  text-shadow:0 3px 10px rgba(0,0,0,.28);
 }
 .cta{
   display:flex;
@@ -323,8 +330,8 @@ button{font:inherit}
 
 .estimate-menu{
   position:fixed;
-  right:10px;
-  bottom:10px;
+  right:6px;
+  bottom:6px;
   z-index:20;
   display:flex;
   flex-direction:column;
@@ -333,9 +340,9 @@ button{font:inherit}
 }
 .estimate-main{
   border:0;
-  min-height:46px;
-  padding:0 14px;
-  border-radius:14px;
+  min-height:42px;
+  padding:0 11px;
+  border-radius:13px;
   background:var(--yellow);
   color:var(--navy);
   font-weight:950;
@@ -347,7 +354,7 @@ button{font:inherit}
 }
 .estimate-options{
   display:none;
-  width:170px;
+  width:158px;
   padding:7px;
   border-radius:14px;
   background:rgba(6,26,53,.88);
@@ -424,11 +431,11 @@ button{font:inherit}
   .wrap{width:min(100% - 16px,780px)}
   .hero{min-height:540px;background-position:center 40%}
   .hero-content{padding-top:24px}
-  .logo{width:min(195px,54vw)}
+  .logo{width:min(225px,60vw)}
   .contact-grid,.services,.gallery,.why-grid{grid-template-columns:1fr}
-  .estimate-menu{right:6px;bottom:6px}
-  .estimate-main{min-height:44px;padding:0 12px;font-size:.86rem}
-  .estimate-options{width:164px}
+  .estimate-menu{right:5px;bottom:5px}
+  .estimate-main{min-height:40px;padding:0 10px;font-size:.8rem}
+  .estimate-options{width:154px}
 
 }
 </style>
@@ -448,9 +455,9 @@ button{font:inherit}
       <img src="logo.png" alt="JG Electric logo" class="logo">
       <div class="tag" data-en="FAST • RELIABLE • LOCAL" data-es="RÁPIDO • CONFIABLE • LOCAL">FAST • RELIABLE • LOCAL</div>
       <p class="hero-copy"
-         data-en="Residential & Commercial Electrical Services serving Southern New Hampshire."
-         data-es="Servicios eléctricos residenciales y comerciales sirviendo el sur de New Hampshire.">
-         Residential & Commercial Electrical Services serving Southern New Hampshire.
+         data-en="Licensed Residential & Commercial Electrician serving Southern New Hampshire."
+         data-es="Electricista residencial y comercial licenciado sirviendo el sur de New Hampshire.">
+         Licensed Residential & Commercial Electrician serving Southern New Hampshire.
       </p>
 
       <div class="trust-strip">
@@ -459,6 +466,7 @@ button{font:inherit}
         <span class="trust-pill" data-en="⚡ Fast Response" data-es="⚡ Respuesta rápida">⚡ Fast Response</span>
       </div>
 
+      <div class="review-stars" aria-label="Five star service">★★★★★</div>
       <div class="hero-actions">
         <a class="cta cta-primary" href="https://g.page/r/CYesLuhC5T9GEBM/review" target="_blank" rel="noopener">
           <span>★</span>
