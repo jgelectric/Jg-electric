@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#071a33" />
+  <meta name="description" content="JG Electric — Licensed & Insured electrician serving Southern New Hampshire." />
+  <title>JG Electric | Fast • Reliable • Local</title>
+  <style>
+    :root{
+      --navy:#071a33;
+      --navy-2:#0c2b55;
+      --yellow:#ffd21f;
+      --white:#ffffff;
+      --light:#f3f6fa;
+      --text:#102033;
+      --muted:#627086;
+      --shadow:0 14px 36px rgba(3,19,38,.16);
+      --radius:22px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+      background:
+        radial-gradient(circle at top right, rgba(255,210,31,.18), transparent 26rem),
+        linear-gradient(180deg,var(--navy),#0a2344 38rem,var(--light) 38rem);
+      color:var(--text);
+    }
+    a{text-decoration:none;color:inherit}
+    .wrap{width:min(680px,calc(100% - 28px));margin:auto;padding:18px 0 42px}
+    .topbar{display:flex;justify-content:flex-end;margin-bottom:10px}
+    .lang{
+      display:flex;background:rgba(255,255,255,.12);padding:4px;border:1px solid rgba(255,255,255,.18);
+      border-radius:999px;backdrop-filter:blur(10px)
+    }
+    .lang button{
+      border:0;background:transparent;color:#fff;padding:8px 13px;border-radius:999px;font-weight:800;cursor:pointer
+    }
+    .lang button.active{background:var(--yellow);color:var(--navy)}
+    .hero{
+      color:#fff;text-align:center;padding:24px 18px 26px
+    }
+    .logo{
+      width:104px;height:104px;border-radius:28px;margin:0 auto 18px;
+      display:grid;place-items:center;background:linear-gradient(145deg,#fff,#dfe8f3);
+      color:var(--navy);font-size:56px;font-weight:1000;box-shadow:var(--shadow);
+      position:relative;overflow:hidden
+    }
+    .logo:after{
+      content:"";position:absolute;width:20px;height:120px;background:var(--yellow);
+      transform:rotate(28deg);left:44px;top:-8px;opacity:.95
+    }
+    .logo span{position:relative;z-index:1;letter-spacing:-7px}
+    h1{margin:0;font-size:clamp(2rem,9vw,3.4rem);letter-spacing:.04em}
+    .tag{margin:8px 0 4px;font-weight:900;color:var(--yellow);letter-spacing:.08em}
+    .sub{margin:8px auto 0;max-width:520px;color:#dce7f4;font-size:1rem;line-height:1.5}
+    .card{
+      background:#fff;border-radius:30px;box-shadow:var(--shadow);padding:18px;margin-top:10px
+    }
+    .primary{
+      display:flex;align-items:center;justify-content:center;gap:10px;
+      background:var(--yellow);color:var(--navy);padding:18px;border-radius:18px;
+      font-size:1.08rem;font-weight:950;box-shadow:0 10px 24px rgba(255,210,31,.3);
+      border:2px solid #e8bd00
+    }
+    .primary:hover{transform:translateY(-1px)}
+    .hint{text-align:center;color:var(--muted);font-size:.9rem;margin:12px 8px 14px}
+    .grid{display:grid;grid-template-columns:1fr 1fr;gap:11px}
+    .btn{
+      display:flex;align-items:center;gap:10px;padding:14px 13px;border-radius:16px;
+      background:#f5f8fc;border:1px solid #dfe7f0;font-weight:850;min-height:58px
+    }
+    .btn:hover{background:#edf3f9}
+    .icon{
+      width:34px;height:34px;border-radius:10px;display:grid;place-items:center;
+      background:var(--navy);color:#fff;flex:none
+    }
+    .section{
+      background:#fff;border-radius:var(--radius);box-shadow:var(--shadow);padding:22px;margin-top:16px
+    }
+    .section h2{margin:0 0 14px;color:var(--navy);font-size:1.3rem}
+    .services{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+    .service{background:#f6f8fb;border-radius:14px;padding:12px;font-weight:750}
+    .service:before{content:"⚡";margin-right:7px}
+    .areas{color:var(--muted);line-height:1.7;margin:0}
+    .emergency{
+      margin-top:16px;background:linear-gradient(135deg,var(--navy),var(--navy-2));
+      color:#fff;border-radius:var(--radius);padding:22px;text-align:center;box-shadow:var(--shadow)
+    }
+    .emergency h2{margin:0 0 7px}
+    .emergency p{margin:0 0 15px;color:#dce7f4}
+    .emergency a{
+      display:inline-block;background:var(--yellow);color:var(--navy);font-weight:950;
+      padding:13px 22px;border-radius:14px
+    }
+    footer{text-align:center;color:#d5dfec;padding:22px 10px 0;font-size:.88rem;line-height:1.6}
+    .small{font-size:.8rem;color:#93a6bc}
+    @media(max-width:480px){
+      .grid,.services{grid-template-columns:1fr}
+      .wrap{width:min(100% - 18px,680px)}
+      .card,.section{padding:14px}
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <div class="topbar">
+      <div class="lang" aria-label="Language selector">
+        <button id="enBtn" class="active" onclick="setLang('en')">EN</button>
+        <button id="esBtn" onclick="setLang('es')">ES</button>
+      </div>
+    </div>
+
+    <section class="hero">
+      <div class="logo" aria-label="JG Electric logo placeholder"><span>JG</span></div>
+      <h1>JG ELECTRIC</h1>
+      <div class="tag" data-en="FAST • RELIABLE • LOCAL" data-es="RÁPIDO • CONFIABLE • LOCAL">FAST • RELIABLE • LOCAL</div>
+      <p class="sub" data-en="Licensed & Insured Electrician serving Southern New Hampshire."
+         data-es="Electricista licenciado y asegurado sirviendo el sur de New Hampshire.">
+         Licensed & Insured Electrician serving Southern New Hampshire.
+      </p>
+    </section>
+
+    <section class="card">
+      <a class="primary" href="https://g.page/r/CYesLuhC5T9GEBM/review" target="_blank" rel="noopener">
+        ⭐ <span data-en="Leave a Google Review" data-es="Dejar una reseña en Google">Leave a Google Review</span>
+      </a>
+      <p class="hint" data-en="Thank you for supporting a local business."
+         data-es="Gracias por apoyar a un negocio local.">Thank you for supporting a local business.</p>
+
+      <div class="grid">
+        <a class="btn" id="estimateLink" href="https://wa.me/16032330736?text=Hi%20JG%20Electric%21%20I%27d%20like%20to%20request%20an%20estimate." target="_blank" rel="noopener">
+          <span class="icon">⚡</span><span data-en="Request an Estimate" data-es="Solicitar un estimado">Request an Estimate</span>
+        </a>
+        <a class="btn" href="tel:+16032330736"><span class="icon">☎</span><span data-en="Call Now" data-es="Llamar ahora">Call Now</span></a>
+        <a class="btn" href="sms:+16032330736"><span class="icon">✉</span><span data-en="Send a Text" data-es="Enviar mensaje">Send a Text</span></a>
+        <a class="btn" id="waLink" href="https://wa.me/16032330736?text=Hi%20JG%20Electric%21" target="_blank" rel="noopener"><span class="icon">◉</span><span>WhatsApp</span></a>
+        <a class="btn" href="https://www.instagram.com/jgelectric.llc/" target="_blank" rel="noopener"><span class="icon">◎</span><span>Instagram</span></a>
+        <a class="btn" href="https://www.facebook.com/share/19Btm5xzdP/?mibextid=wwXIfr" target="_blank" rel="noopener"><span class="icon">f</span><span>Facebook</span></a>
+        <a class="btn" href="mailto:jgelectricoffice@gmail.com"><span class="icon">@</span><span data-en="Email Us" data-es="Enviar correo">Email Us</span></a>
+        <a class="btn" href="JG-Electric.vcf" download><span class="icon">+</span><span data-en="Save Contact" data-es="Guardar contacto">Save Contact</span></a>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 data-en="Electrical Services" data-es="Servicios eléctricos">Electrical Services</h2>
+      <div class="services">
+        <div class="service" data-en="Troubleshooting" data-es="Diagnóstico de fallas">Troubleshooting</div>
+        <div class="service" data-en="Panel Upgrades" data-es="Actualización de paneles">Panel Upgrades</div>
+        <div class="service" data-en="EV Chargers" data-es="Cargadores para vehículos eléctricos">EV Chargers</div>
+        <div class="service" data-en="Recessed Lighting" data-es="Luces empotradas">Recessed Lighting</div>
+        <div class="service" data-en="Dedicated Circuits" data-es="Circuitos dedicados">Dedicated Circuits</div>
+        <div class="service" data-en="Remodel Wiring" data-es="Cableado para remodelaciones">Remodel Wiring</div>
+        <div class="service" data-en="Surge Protection" data-es="Protección contra sobretensiones">Surge Protection</div>
+        <div class="service" data-en="Outdoor Lighting" data-es="Iluminación exterior">Outdoor Lighting</div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 data-en="Service Area" data-es="Área de servicio">Service Area</h2>
+      <p class="areas">Hudson • Nashua • Merrimack • Londonderry • Windham • Salem • Manchester • Derry • Bedford • Litchfield • Amherst</p>
+    </section>
+
+    <section class="emergency">
+      <h2 data-en="Need an electrician?" data-es="¿Necesita un electricista?">Need an electrician?</h2>
+      <p data-en="Call JG Electric for the fastest response."
+         data-es="Llame a JG Electric para recibir la respuesta más rápida.">Call JG Electric for the fastest response.</p>
+      <a href="tel:+16032330736" data-en="Call 603-233-0736" data-es="Llamar al 603-233-0736">Call 603-233-0736</a>
+    </section>
+
+    <footer>
+      <strong>JG ELECTRIC</strong><br>
+      603-233-0736 · jgelectricoffice@gmail.com<br>
+      <span class="small" data-en="Licensed & Insured • Southern New Hampshire"
+            data-es="Licenciado y asegurado • Sur de New Hampshire">Licensed & Insured • Southern New Hampshire</span>
+    </footer>
+  </main>
+
+  <script>
+    const translatable = document.querySelectorAll('[data-en][data-es]');
+    const estimate = document.getElementById('estimateLink');
+    const wa = document.getElementById('waLink');
+
+    function setLang(lang){
+      translatable.forEach(el => el.textContent = el.dataset[lang]);
+      document.documentElement.lang = lang;
+      document.getElementById('enBtn').classList.toggle('active', lang === 'en');
+      document.getElementById('esBtn').classList.toggle('active', lang === 'es');
+
+      if(lang === 'es'){
+        estimate.href = 'https://wa.me/16032330736?text=Hola%20JG%20Electric%21%20Me%20gustar%C3%ADa%20solicitar%20un%20estimado.';
+        wa.href = 'https://wa.me/16032330736?text=Hola%20JG%20Electric%21';
+      } else {
+        estimate.href = 'https://wa.me/16032330736?text=Hi%20JG%20Electric%21%20I%27d%20like%20to%20request%20an%20estimate.';
+        wa.href = 'https://wa.me/16032330736?text=Hi%20JG%20Electric%21';
+      }
+      localStorage.setItem('jg-language', lang);
+    }
+
+    const saved = localStorage.getItem('jg-language');
+    const browserLang = (navigator.language || 'en').toLowerCase().startsWith('es') ? 'es' : 'en';
+    setLang(saved || browserLang);
+  </script>
+</body>
+</html>
