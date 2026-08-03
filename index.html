@@ -88,9 +88,12 @@ button{font:inherit}
   display:block;
   margin:0 auto 14px;
   padding:10px 12px;
-  background:rgba(255,255,255,.96);
+  background:rgba(255,255,255,.62);
+  border:1px solid rgba(255,255,255,.68);
   border-radius:18px;
-  box-shadow:0 10px 28px rgba(0,0,0,.28);
+  box-shadow:0 10px 28px rgba(0,0,0,.24);
+  backdrop-filter:blur(14px);
+  -webkit-backdrop-filter:blur(14px);
 }
 .tag{
   color:var(--yellow);
@@ -308,60 +311,63 @@ button{font:inherit}
 .footer a{color:var(--yellow);font-weight:900}
 .small{font-size:.8rem;color:#98acc2}
 
-.float-bar{
+.estimate-menu{
   position:fixed;
-  left:50%;
-  bottom:6px;
-  transform:translateX(-50%);
-  width:min(520px,calc(100% - 14px));
-  display:grid;
-  grid-template-columns:48px 48px 48px 1fr;
-  gap:7px;
-  padding:6px;
-  border-radius:17px;
-  background:rgba(6,26,53,.76);
-  border:1px solid rgba(255,255,255,.18);
-  box-shadow:0 16px 42px rgba(0,0,0,.3);
-  backdrop-filter:blur(18px);
-  -webkit-backdrop-filter:blur(18px);
+  right:12px;
+  bottom:10px;
   z-index:20;
+  display:flex;
+  flex-direction:column;
+  align-items:flex-end;
+  gap:8px;
 }
-.float-bar a{
-  min-height:46px;
-  border-radius:12px;
+.estimate-main{
+  border:0;
+  min-height:50px;
+  padding:0 18px;
+  border-radius:16px;
+  background:var(--yellow);
+  color:var(--navy);
+  font-weight:950;
+  box-shadow:0 16px 38px rgba(0,0,0,.28);
   display:flex;
   align-items:center;
-  justify-content:center;
   gap:8px;
+  cursor:pointer;
+}
+.estimate-options{
+  display:none;
+  width:190px;
+  padding:8px;
+  border-radius:16px;
+  background:rgba(6,26,53,.88);
+  border:1px solid rgba(255,255,255,.16);
+  backdrop-filter:blur(16px);
+  -webkit-backdrop-filter:blur(16px);
+  box-shadow:0 16px 38px rgba(0,0,0,.28);
+}
+.estimate-options.open{display:grid;gap:7px}
+.estimate-options a{
+  min-height:44px;
+  padding:0 12px;
+  border-radius:12px;
   color:#fff;
-  font-weight:900;
-  font-size:.9rem;
-}
-.float-bar a.quick-icon{
   background:rgba(255,255,255,.08);
-  border:1px solid rgba(255,255,255,.08);
+  display:flex;
+  align-items:center;
+  gap:10px;
+  font-weight:850;
 }
-.float-bar a.quick-icon svg{
-  width:22px;
-  height:22px;
-  stroke:currentColor;
+.estimate-options svg{
+  width:20px;
+  height:20px;
   fill:none;
+  stroke:currentColor;
   stroke-width:2;
   stroke-linecap:round;
   stroke-linejoin:round;
 }
-.float-bar a.quick-icon.brand svg{
-  fill:currentColor;
-  stroke:none;
-}
-.float-bar a.estimate-float{
-  background:var(--yellow);
-  color:var(--navy);
-  padding:0 16px;
-  box-shadow:0 8px 22px rgba(255,210,31,.25);
-}
-.float-bar a:active{transform:scale(.97)}
-
+.estimate-options svg.fill-icon{fill:currentColor;stroke:none}
 .modal{
   position:fixed;
   inset:0;
@@ -410,15 +416,9 @@ button{font:inherit}
   .hero-content{padding-top:24px}
   .logo{width:min(190px,52vw)}
   .contact-grid,.services,.gallery,.why-grid{grid-template-columns:1fr}
-  .float-bar{
-    grid-template-columns:46px 46px 46px 1fr;
-    width:calc(100% - 10px);
-    bottom:4px;
-  }
-  .float-bar a.estimate-float{
-    font-size:.8rem;
-    padding:0 10px;
-  }
+  .estimate-menu{right:7px;bottom:7px}
+  .estimate-main{min-height:48px;padding:0 15px}
+
 }
 </style>
 </head>
@@ -457,7 +457,7 @@ button{font:inherit}
            href="https://wa.me/16032330736?text=Hi%20JG%20Electric%21%20I%27d%20like%20to%20request%20an%20estimate."
            target="_blank" rel="noopener">
           <span>⚡</span>
-          <span data-en="Request a Free Estimate" data-es="Solicitar un estimado gratis">Request a Free Estimate</span>
+          <span data-en="Get Your Free Estimate Today" data-es="Solicitar su estimado gratis hoy">Get Your Free Estimate Today</span>
         </a>
       </div>
     </div>
@@ -520,10 +520,12 @@ button{font:inherit}
         <div class="service"><span class="service-bolt">⚡</span><span data-en="Panel Upgrades" data-es="Actualización de paneles">Panel Upgrades</span></div>
         <div class="service"><span class="service-bolt">⚡</span><span data-en="EV Chargers" data-es="Cargadores para vehículos eléctricos">EV Chargers</span></div>
         <div class="service"><span class="service-bolt">⚡</span><span data-en="Recessed Lighting" data-es="Luces empotradas">Recessed Lighting</span></div>
+        <div class="service"><span class="service-bolt">⚡</span><span data-en="Ceiling Fans" data-es="Ventiladores de techo">Ceiling Fans</span></div>
         <div class="service"><span class="service-bolt">⚡</span><span data-en="Dedicated Circuits" data-es="Circuitos dedicados">Dedicated Circuits</span></div>
-        <div class="service"><span class="service-bolt">⚡</span><span data-en="Remodel Wiring" data-es="Cableado para remodelaciones">Remodel Wiring</span></div>
         <div class="service"><span class="service-bolt">⚡</span><span data-en="Surge Protection" data-es="Protección contra sobretensiones">Surge Protection</span></div>
         <div class="service"><span class="service-bolt">⚡</span><span data-en="Landscape Lighting" data-es="Iluminación de paisaje">Landscape Lighting</span></div>
+        <div class="service"><span class="service-bolt">⚡</span><span data-en="Smoke & CO Detectors" data-es="Detectores de humo y CO">Smoke & CO Detectors</span></div>
+        <div class="service"><span class="service-bolt">⚡</span><span data-en="Electrical Remodeling" data-es="Remodelaciones eléctricas">Electrical Remodeling</span></div>
       </div>
 
       <div class="more-services">
@@ -574,28 +576,34 @@ button{font:inherit}
       <img src="logo.png" alt="JG Electric logo">
       <p><strong>603-233-0736</strong></p>
       <p><a href="mailto:jgelectricoffice@gmail.com">jgelectricoffice@gmail.com</a></p>
-      <p data-en="Licensed & Insured • Fast • Reliable • Local"
-         data-es="Licenciado y asegurado • Rápido • Confiable • Local">Licensed & Insured • Fast • Reliable • Local</p>
+      <p data-en="NH Licensed Electrician #16872 • Fully Insured"
+         data-es="Electricista licenciado en NH #16872 • Totalmente asegurado">NH Licensed Electrician #16872 • Fully Insured</p>
       <div class="small">© 2026 JG Electric</div>
     </footer>
 
   </div>
 </main>
 
-<nav class="float-bar" aria-label="Quick contact">
-  <a class="quick-icon" href="tel:+16032330736" aria-label="Call JG Electric">
-    <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07A19.5 19.5 0 0 1 5.15 12.8 19.8 19.8 0 0 1 2.08 4.18 2 2 0 0 1 4.07 2h3a2 2 0 0 1 2 1.72c.12.9.33 1.78.62 2.63a2 2 0 0 1-.45 2.11L8 9.69a16 16 0 0 0 6 6l1.23-1.23a2 2 0 0 1 2.11-.45c.85.29 1.73.5 2.63.62A2 2 0 0 1 22 16.92z"/></svg>
-  </a>
-  <a class="quick-icon" href="sms:+16032330736" aria-label="Text JG Electric">
-    <svg viewBox="0 0 24 24"><path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z"/></svg>
-  </a>
-  <a class="quick-icon brand" id="floatWa" href="https://wa.me/16032330736?text=Hi%20JG%20Electric%21" target="_blank" rel="noopener" aria-label="WhatsApp JG Electric">
-    <svg viewBox="0 0 24 24"><path d="M12.1 2a9.8 9.8 0 0 0-8.4 14.9L2 22l5.3-1.7A9.9 9.9 0 1 0 12.1 2zm5.8 14.2c-.2.6-1.2 1.2-1.8 1.3-.5.1-1.2.2-3.8-.9-3.2-1.3-5.2-4.5-5.4-4.7-.2-.3-1.3-1.8-1.3-3.4s.8-2.4 1.1-2.7c.3-.3.6-.4.8-.4h.6c.2 0 .5-.1.7.5.2.6.8 2 .9 2.2.1.2.1.4 0 .6-.1.2-.2.4-.4.6-.2.2-.4.5-.6.7-.2.2-.4.4-.2.8.2.4.9 1.5 2 2.4 1.3 1.2 2.4 1.6 2.8 1.8.4.2.6.2.8-.1.3-.3 1-1.2 1.3-1.6.3-.4.5-.3.9-.2.4.1 2.3 1.1 2.7 1.3.4.2.6.3.7.5.1.1.1.8-.1 1.3z"/></svg>
-  </a>
-  <a class="estimate-float" id="floatEstimate" href="https://wa.me/16032330736?text=Hi%20JG%20Electric%21%20I%27d%20like%20to%20request%20an%20estimate." target="_blank" rel="noopener">
+<div class="estimate-menu" id="estimateMenu">
+  <button class="estimate-main" id="estimateMain" aria-expanded="false">
+    <span>⚡</span>
     <span data-en="Get Estimate" data-es="Solicitar estimado">Get Estimate</span>
-  </a>
-</nav>
+  </button>
+  <div class="estimate-options" id="estimateOptions">
+    <a href="tel:+16032330736" aria-label="Call JG Electric">
+      <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07A19.5 19.5 0 0 1 5.15 12.8 19.8 19.8 0 0 1 2.08 4.18 2 2 0 0 1 4.07 2h3a2 2 0 0 1 2 1.72c.12.9.33 1.78.62 2.63a2 2 0 0 1-.45 2.11L8 9.69a16 16 0 0 0 6 6l1.23-1.23a2 2 0 0 1 2.11-.45c.85.29 1.73.5 2.63.62A2 2 0 0 1 22 16.92z"/></svg>
+      <span data-en="Call" data-es="Llamar">Call</span>
+    </a>
+    <a href="sms:+16032330736" aria-label="Text JG Electric">
+      <svg viewBox="0 0 24 24"><path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z"/></svg>
+      <span data-en="Text" data-es="Mensaje">Text</span>
+    </a>
+    <a id="floatWa" href="https://wa.me/16032330736?text=Hi%20JG%20Electric%21" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" class="fill-icon"><path d="M12.1 2a9.8 9.8 0 0 0-8.4 14.9L2 22l5.3-1.7A9.9 9.9 0 1 0 12.1 2zm5.8 14.2c-.2.6-1.2 1.2-1.8 1.3-.5.1-1.2.2-3.8-.9-3.2-1.3-5.2-4.5-5.4-4.7-.2-.3-1.3-1.8-1.3-3.4s.8-2.4 1.1-2.7c.3-.3.6-.4.8-.4h.6c.2 0 .5-.1.7.5.2.6.8 2 .9 2.2.1.2.1.4 0 .6-.1.2-.2.4-.4.6-.2.2-.4.5-.6.7-.2.2-.4.4-.2.8.2.4.9 1.5 2 2.4 1.3 1.2 2.4 1.6 2.8 1.8.4.2.6.2.8-.1.3-.3 1-1.2 1.3-1.6.3-.4.5-.3.9-.2.4.1 2.3 1.1 2.7 1.3.4.2.6.3.7.5.1.1.1.8-.1 1.3z"/></svg>
+      <span>WhatsApp</span>
+    </a>
+  </div>
+</div>
 
 <div class="modal" id="imageModal" aria-hidden="true">
   <div class="modal-content">
@@ -610,7 +618,8 @@ const translatable=document.querySelectorAll('[data-en][data-es]');
 const estimateTop=document.getElementById('estimateTop');
 const wa=document.getElementById('waLink');
 const floatWa=document.getElementById('floatWa');
-const floatEstimate=document.getElementById('floatEstimate');
+const estimateMain=document.getElementById('estimateMain');
+const estimateOptions=document.getElementById('estimateOptions');
 
 function setLang(lang){
   translatable.forEach(el=>el.textContent=el.dataset[lang]);
@@ -622,15 +631,24 @@ function setLang(lang){
     estimateTop.href='https://wa.me/16032330736?text=Hola%20JG%20Electric%21%20Me%20gustar%C3%ADa%20solicitar%20un%20estimado.';
     wa.href='https://wa.me/16032330736?text=Hola%20JG%20Electric%21';
     floatWa.href='https://wa.me/16032330736?text=Hola%20JG%20Electric%21';
-    floatEstimate.href='https://wa.me/16032330736?text=Hola%20JG%20Electric%21%20Me%20gustar%C3%ADa%20solicitar%20un%20estimado.';
   }else{
     estimateTop.href='https://wa.me/16032330736?text=Hi%20JG%20Electric%21%20I%27d%20like%20to%20request%20an%20estimate.';
     wa.href='https://wa.me/16032330736?text=Hi%20JG%20Electric%21';
     floatWa.href='https://wa.me/16032330736?text=Hi%20JG%20Electric%21';
-    floatEstimate.href='https://wa.me/16032330736?text=Hi%20JG%20Electric%21%20I%27d%20like%20to%20request%20an%20estimate.';
   }
   localStorage.setItem('jg-language',lang);
 }
+estimateMain.addEventListener('click',()=>{
+  const open=estimateOptions.classList.toggle('open');
+  estimateMain.setAttribute('aria-expanded',String(open));
+});
+document.addEventListener('click',e=>{
+  if(!document.getElementById('estimateMenu').contains(e.target)){
+    estimateOptions.classList.remove('open');
+    estimateMain.setAttribute('aria-expanded','false');
+  }
+});
+
 const saved=localStorage.getItem('jg-language');
 const browser=(navigator.language||'en').toLowerCase().startsWith('es')?'es':'en';
 setLang(saved||browser);

@@ -1,16 +1,16 @@
-JG ELECTRIC WEBSITE 4.0
+JG ELECTRIC WEBSITE 5.0
 
 UPDATES
-- Hero copy changed to Residential & Commercial Electrical Services
-- Trust badges changed to:
-  • Licensed & Insured
-  • Quality You Can Trust
-  • Fast Response
-- Corrected all remaining “Quality Workmanship” wording
-- Smaller logo
-- Darker, softer hero background
-- Smaller floating bar moved closer to the bottom
-- Better mobile spacing
+- Frosted-glass logo card
+- Smaller cleaner logo treatment
+- Main CTA changed to “Get Your Free Estimate Today”
+- Expanded services:
+  • Ceiling Fans
+  • Smoke & CO Detectors
+  • Electrical Remodeling
+- Single floating Get Estimate button that expands to Call, Text, and WhatsApp
+- Added NH License #16872 to the footer
+- Spanish translations included
 
 UPLOAD ALL FILES TO THE ROOT OF YOUR GITHUB REPOSITORY.
 At minimum replace index.html and logo.png.
