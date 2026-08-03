@@ -1,14 +1,28 @@
-JG ELECTRIC WEBSITE 5.1 — FINAL POLISH
+JG ELECTRIC WEBSITE 6.0
 
-Changes:
-- Softer frosted-glass logo card
-- Reduced visible border and shadow around the logo
-- Logo section moved slightly higher
-- Truck background made darker and subtly blurred
-- Smaller bottom-right Get Estimate button
-- Smaller expanded Call / Text / WhatsApp menu
-- Better mobile spacing
+WHAT CHANGED
+- Added the new transparent JG Electric logo
+- Removed the white/frosted logo box
+- Added a subtle shadow and yellow glow behind the logo
+- Updated the footer logo
+- Updated the favicon
+- Kept all previous features:
+  • English / Spanish switch
+  • Google review button
+  • Free estimate button
+  • Call, text, WhatsApp, Facebook, Instagram, email, and save-contact buttons
+  • Electrical services
+  • “And much more...” message
+  • Why Choose JG Electric section
+  • Project gallery
+  • NH License #16872
+  • Floating estimate menu
 
-Upload all files to your GitHub repository root.
-At minimum replace index.html.
+UPLOAD TO GITHUB
+1. Unzip this folder.
+2. Upload every file to the root of your Jg-lectric repository.
+3. Replace the existing files.
+4. Commit the changes.
+5. Wait 1–3 minutes and refresh the website.
+
 Your website URL and QR code remain unchanged.

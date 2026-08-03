@@ -91,17 +91,18 @@ button{font:inherit}
   padding:14px 0 38px;
 }
 .logo{
-  width:min(205px,54vw);
+  width:min(220px,56vw);
   height:auto;
   display:block;
-  margin:0 auto 14px;
-  padding:10px 12px;
-  background:rgba(255,255,255,.48);
-  border:1px solid rgba(255,255,255,.28);
-  border-radius:18px;
-  box-shadow:0 8px 24px rgba(0,0,0,.18);
-  backdrop-filter:blur(16px);
-  -webkit-backdrop-filter:blur(16px);
+  margin:0 auto 18px;
+  padding:0;
+  background:transparent;
+  border:0;
+  border-radius:0;
+  box-shadow:none;
+  filter:
+    drop-shadow(0 8px 18px rgba(0,0,0,.42))
+    drop-shadow(0 0 16px rgba(255,210,31,.14));
 }
 .tag{
   color:var(--yellow);
@@ -311,9 +312,10 @@ button{font:inherit}
   width:145px;
   max-width:55%;
   margin-bottom:8px;
-  padding:8px 10px;
-  background:#fff;
-  border-radius:14px;
+  padding:0;
+  background:transparent;
+  border-radius:0;
+  filter:drop-shadow(0 6px 14px rgba(0,0,0,.28));
 }
 .footer p{margin:5px 0;color:#dce7f4}
 .footer a{color:var(--yellow);font-weight:900}
@@ -422,7 +424,7 @@ button{font:inherit}
   .wrap{width:min(100% - 16px,780px)}
   .hero{min-height:540px;background-position:center 40%}
   .hero-content{padding-top:24px}
-  .logo{width:min(190px,52vw)}
+  .logo{width:min(195px,54vw)}
   .contact-grid,.services,.gallery,.why-grid{grid-template-columns:1fr}
   .estimate-menu{right:6px;bottom:6px}
   .estimate-main{min-height:44px;padding:0 12px;font-size:.86rem}
