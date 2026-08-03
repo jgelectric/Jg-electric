@@ -11,7 +11,7 @@
 <meta property="og:url" content="https://jgelectric.github.io/Jg-lectric/">
 <meta property="og:image" content="https://jgelectric.github.io/Jg-lectric/truck.jpg">
 <link rel="icon" type="image/png" href="favicon.png">
-<title>JG Electric | Fast • Reliable • Local - v4.2</title>
+<title>JG Electric | Fast • Reliable • Local</title>
 <style>
 :root{
   --navy:#061a35;
@@ -333,63 +333,22 @@ button{font:inherit}
 .footer a{color:var(--yellow);font-weight:900}
 .small{font-size:.8rem;color:#98acc2}
 
-.estimate-menu{
-  position:fixed;
-  right:4px;
-  bottom:4px;
-  z-index:20;
-  display:flex;
-  flex-direction:column;
-  align-items:flex-end;
-  gap:7px;
-}
-.estimate-main{
-  border:0;
-  min-height:37px;
-  padding:0 9px;
-  border-radius:13px;
-  background:var(--yellow);
-  color:var(--navy);
-  font-weight:950;
-  box-shadow:0 16px 38px rgba(0,0,0,.28);
-  display:flex;
-  align-items:center;
-  gap:8px;
-  cursor:pointer;
-}
-.estimate-options{
-  display:none;
-  width:148px;
-  padding:7px;
-  border-radius:14px;
-  background:rgba(6,26,53,.88);
-  border:1px solid rgba(255,255,255,.16);
-  backdrop-filter:blur(16px);
-  -webkit-backdrop-filter:blur(16px);
-  box-shadow:0 16px 38px rgba(0,0,0,.28);
-}
-.estimate-options.open{display:grid;gap:7px}
-.estimate-options a{
-  min-height:38px;
-  padding:0 9px;
-  border-radius:11px;
-  color:#fff;
-  background:rgba(255,255,255,.08);
-  display:flex;
-  align-items:center;
-  gap:10px;
-  font-weight:850;
-}
-.estimate-options svg{
-  width:20px;
-  height:20px;
-  fill:none;
-  stroke:currentColor;
-  stroke-width:2;
-  stroke-linecap:round;
-  stroke-linejoin:round;
-}
-.estimate-options svg.fill-icon{fill:currentColor;stroke:none}
+
+.fab{position:fixed;right:14px;bottom:14px;z-index:50;display:flex;flex-direction:column;align-items:flex-end;gap:10px}
+.fab-toggle{width:56px;height:56px;border:none;border-radius:50%;background:var(--yellow);color:var(--navy);display:grid;place-items:center;box-shadow:0 14px 34px rgba(0,0,0,.28);cursor:pointer;transition:transform .22s ease,box-shadow .22s ease}
+.fab-toggle:active{transform:scale(.96)}
+.fab-toggle svg{width:27px;height:27px;fill:currentColor;transition:transform .28s ease}
+.fab.open .fab-toggle svg{transform:rotate(45deg)}
+.fab-menu{display:flex;flex-direction:column;gap:8px;align-items:flex-end;opacity:0;transform:translateY(12px) scale(.96);pointer-events:none;transition:opacity .22s ease,transform .22s ease}
+.fab.open .fab-menu{opacity:1;transform:translateY(0) scale(1);pointer-events:auto}
+.fab-item{min-height:44px;display:flex;align-items:center;gap:10px;padding:0 12px 0 10px;border-radius:14px;background:rgba(6,26,53,.94);border:1px solid rgba(255,255,255,.16);color:#fff;box-shadow:0 10px 28px rgba(0,0,0,.22);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);font-weight:850;white-space:nowrap}
+.fab-icon{width:30px;height:30px;border-radius:10px;display:grid;place-items:center;background:rgba(255,255,255,.08);color:#fff}
+.fab-icon svg{width:19px;height:19px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.fab-icon.whatsapp svg{fill:currentColor;stroke:none}
+.fab-item.estimate{background:var(--yellow);color:var(--navy)}
+.fab-item.estimate .fab-icon{background:rgba(6,26,53,.1);color:var(--navy)}
+@media(max-width:520px){.fab{right:8px;bottom:8px}.fab-toggle{width:52px;height:52px}.fab-item{min-height:42px;font-size:.88rem}}
+
 .modal{
   position:fixed;
   inset:0;
@@ -443,10 +402,6 @@ button{font:inherit}
   .estimate-options{width:154px}
 
 }
-
-.fab-note{position:fixed;right:8px;bottom:8px;width:56px;height:56px;border-radius:50%;
-background:#f4c400;color:#0b2341;display:flex;align-items:center;justify-content:center;
-font-weight:bold;box-shadow:0 8px 20px rgba(0,0,0,.25);z-index:9999}
 </style>
 </head>
 <body>
@@ -612,25 +567,31 @@ font-weight:bold;box-shadow:0 8px 20px rgba(0,0,0,.25);z-index:9999}
   </div>
 </main>
 
-<div class="estimate-menu" id="estimateMenu">
-  <button class="estimate-main" id="estimateMain" aria-expanded="false">
-    <span>⚡</span>
-    <span data-en="Estimate" data-es="Solicitar estimado">Estimate</span>
-  </button>
-  <div class="estimate-options" id="estimateOptions">
-    <a href="tel:+16032330736" aria-label="Call JG Electric">
-      <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07A19.5 19.5 0 0 1 5.15 12.8 19.8 19.8 0 0 1 2.08 4.18 2 2 0 0 1 4.07 2h3a2 2 0 0 1 2 1.72c.12.9.33 1.78.62 2.63a2 2 0 0 1-.45 2.11L8 9.69a16 16 0 0 0 6 6l1.23-1.23a2 2 0 0 1 2.11-.45c.85.29 1.73.5 2.63.62A2 2 0 0 1 22 16.92z"/></svg>
+
+
+
+<div class="fab" id="fab">
+  <div class="fab-menu" id="fabMenu" aria-hidden="true">
+    <a class="fab-item" href="tel:+16032330736">
+      <span class="fab-icon"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07A19.5 19.5 0 0 1 5.15 12.8 19.8 19.8 0 0 1 2.08 4.18 2 2 0 0 1 4.07 2h3a2 2 0 0 1 2 1.72c.12.9.33 1.78.62 2.63a2 2 0 0 1-.45 2.11L8 9.69a16 16 0 0 0 6 6l1.23-1.23a2 2 0 0 1 2.11-.45c.85.29 1.73.5 2.63.62A2 2 0 0 1 22 16.92z"/></svg></span>
       <span data-en="Call" data-es="Llamar">Call</span>
     </a>
-    <a href="sms:+16032330736" aria-label="Text JG Electric">
-      <svg viewBox="0 0 24 24"><path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z"/></svg>
+    <a class="fab-item" href="sms:+16032330736">
+      <span class="fab-icon"><svg viewBox="0 0 24 24"><path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z"/></svg></span>
       <span data-en="Text" data-es="Mensaje">Text</span>
     </a>
-    <a id="floatWa" href="https://wa.me/16032330736?text=Hi%20JG%20Electric%21" target="_blank" rel="noopener">
-      <svg viewBox="0 0 24 24" class="fill-icon"><path d="M12.1 2a9.8 9.8 0 0 0-8.4 14.9L2 22l5.3-1.7A9.9 9.9 0 1 0 12.1 2zm5.8 14.2c-.2.6-1.2 1.2-1.8 1.3-.5.1-1.2.2-3.8-.9-3.2-1.3-5.2-4.5-5.4-4.7-.2-.3-1.3-1.8-1.3-3.4s.8-2.4 1.1-2.7c.3-.3.6-.4.8-.4h.6c.2 0 .5-.1.7.5.2.6.8 2 .9 2.2.1.2.1.4 0 .6-.1.2-.2.4-.4.6-.2.2-.4.5-.6.7-.2.2-.4.4-.2.8.2.4.9 1.5 2 2.4 1.3 1.2 2.4 1.6 2.8 1.8.4.2.6.2.8-.1.3-.3 1-1.2 1.3-1.6.3-.4.5-.3.9-.2.4.1 2.3 1.1 2.7 1.3.4.2.6.3.7.5.1.1.1.8-.1 1.3z"/></svg>
+    <a class="fab-item" id="fabWhatsApp" href="https://wa.me/16032330736?text=Hi%20JG%20Electric%21" target="_blank" rel="noopener">
+      <span class="fab-icon whatsapp"><svg viewBox="0 0 24 24"><path d="M12.1 2a9.8 9.8 0 0 0-8.4 14.9L2 22l5.3-1.7A9.9 9.9 0 1 0 12.1 2zm5.8 14.2c-.2.6-1.2 1.2-1.8 1.3-.5.1-1.2.2-3.8-.9-3.2-1.3-5.2-4.5-5.4-4.7-.2-.3-1.3-1.8-1.3-3.4s.8-2.4 1.1-2.7c.3-.3.6-.4.8-.4h.6c.2 0 .5-.1.7.5.2.6.8 2 .9 2.2.1.2.1.4 0 .6-.1.2-.2.4-.4.6-.2.2-.4.5-.6.7-.2.2-.4.4-.2.8.2.4.9 1.5 2 2.4 1.3 1.2 2.4 1.6 2.8 1.8.4.2.6.2.8-.1.3-.3 1-1.2 1.3-1.6.3-.4.5-.3.9-.2.4.1 2.3 1.1 2.7 1.3.4.2.6.3.7.5.1.1.1.8-.1 1.3z"/></svg></span>
       <span>WhatsApp</span>
     </a>
+    <a class="fab-item estimate" id="fabEstimate" href="https://wa.me/16032330736?text=Hi%20JG%20Electric%21%20I%27d%20like%20to%20request%20an%20estimate." target="_blank" rel="noopener">
+      <span class="fab-icon"><svg viewBox="0 0 24 24"><path d="M13 2 3 14h8l-1 8 10-12h-8z"/></svg></span>
+      <span data-en="Get Estimate" data-es="Solicitar estimado">Get Estimate</span>
+    </a>
   </div>
+  <button class="fab-toggle" id="fabToggle" aria-expanded="false" aria-controls="fabMenu" aria-label="Open quick contact menu">
+    <svg viewBox="0 0 24 24"><path d="M13 2 3 14h8l-1 8 10-12h-8z"/></svg>
+  </button>
 </div>
 
 <div class="modal" id="imageModal" aria-hidden="true">
@@ -646,8 +607,6 @@ const translatable=document.querySelectorAll('[data-en][data-es]');
 const estimateTop=document.getElementById('estimateTop');
 const wa=document.getElementById('waLink');
 const floatWa=document.getElementById('floatWa');
-const estimateMain=document.getElementById('estimateMain');
-const estimateOptions=document.getElementById('estimateOptions');
 
 function setLang(lang){
   translatable.forEach(el=>el.textContent=el.dataset[lang]);
@@ -658,10 +617,14 @@ function setLang(lang){
   if(lang==='es'){
     estimateTop.href='https://wa.me/16032330736?text=Hola%20JG%20Electric%21%20Me%20gustar%C3%ADa%20solicitar%20un%20estimado.';
     wa.href='https://wa.me/16032330736?text=Hola%20JG%20Electric%21';
+    fabWhatsApp.href='https://wa.me/16032330736?text=Hola%20JG%20Electric%21';
+    fabEstimate.href='https://wa.me/16032330736?text=Hola%20JG%20Electric%21%20Me%20gustar%C3%ADa%20solicitar%20un%20estimado.';
     floatWa.href='https://wa.me/16032330736?text=Hola%20JG%20Electric%21';
   }else{
     estimateTop.href='https://wa.me/16032330736?text=Hi%20JG%20Electric%21%20I%27d%20like%20to%20request%20an%20estimate.';
     wa.href='https://wa.me/16032330736?text=Hi%20JG%20Electric%21';
+    fabWhatsApp.href='https://wa.me/16032330736?text=Hi%20JG%20Electric%21';
+    fabEstimate.href='https://wa.me/16032330736?text=Hi%20JG%20Electric%21%20I%27d%20like%20to%20request%20an%20estimate.';
     floatWa.href='https://wa.me/16032330736?text=Hi%20JG%20Electric%21';
   }
   localStorage.setItem('jg-language',lang);
@@ -674,6 +637,26 @@ document.addEventListener('click',e=>{
   if(!document.getElementById('estimateMenu').contains(e.target)){
     estimateOptions.classList.remove('open');
     estimateMain.setAttribute('aria-expanded','false');
+  }
+});
+
+
+const fab=document.getElementById('fab');
+const fabToggle=document.getElementById('fabToggle');
+const fabMenu=document.getElementById('fabMenu');
+const fabWhatsApp=document.getElementById('fabWhatsApp');
+const fabEstimate=document.getElementById('fabEstimate');
+
+fabToggle.addEventListener('click',()=>{
+  const open=fab.classList.toggle('open');
+  fabToggle.setAttribute('aria-expanded',String(open));
+  fabMenu.setAttribute('aria-hidden',String(!open));
+});
+document.addEventListener('click',e=>{
+  if(!fab.contains(e.target)){
+    fab.classList.remove('open');
+    fabToggle.setAttribute('aria-expanded','false');
+    fabMenu.setAttribute('aria-hidden','true');
   }
 });
 
