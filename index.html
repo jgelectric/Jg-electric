@@ -5,87 +5,418 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#061a35">
 <meta name="description" content="JG Electric — Licensed & Insured electrician serving Southern New Hampshire.">
+<link rel="icon" type="image/png" href="favicon.png">
 <title>JG Electric | Fast • Reliable • Local</title>
 <style>
 :root{
-  --navy:#061a35; --navy2:#0b2a55; --yellow:#ffd21f; --white:#fff;
-  --light:#f4f7fb; --text:#0e2036; --muted:#62738a; --shadow:0 18px 42px rgba(2,18,37,.18);
+  --navy:#061a35;
+  --navy2:#0b2a55;
+  --yellow:#ffd21f;
+  --white:#ffffff;
+  --light:#f3f6fa;
+  --text:#102033;
+  --muted:#64748b;
+  --line:#dce5ef;
+  --shadow:0 16px 38px rgba(3,18,39,.14);
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{margin:0;font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:var(--light);color:var(--text)}
+body{
+  margin:0;
+  font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  background:var(--light);
+  color:var(--text);
+}
+body.modal-open{overflow:hidden}
 a{text-decoration:none;color:inherit}
+button{font:inherit}
+.wrap{width:min(780px,calc(100% - 24px));margin:auto}
+
 .hero{
-  min-height:640px;background:
-    linear-gradient(180deg,rgba(3,18,39,.72),rgba(3,18,39,.92)),
-    url('truck.jpg') center/cover no-repeat;
-  color:#fff;position:relative;overflow:hidden
+  min-height:555px;
+  color:#fff;
+  position:relative;
+  overflow:hidden;
+  background:
+    linear-gradient(180deg,rgba(3,18,39,.47),rgba(3,18,39,.91)),
+    url('truck.jpg') center 42%/cover no-repeat;
 }
 .hero:after{
-  content:"";position:absolute;inset:auto -80px -120px auto;width:340px;height:340px;
-  background:radial-gradient(circle,rgba(255,210,31,.25),transparent 65%)
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    radial-gradient(circle at 15% 18%,rgba(255,210,31,.16),transparent 28rem),
+    linear-gradient(90deg,rgba(6,26,53,.22),rgba(6,26,53,.02) 52%,rgba(6,26,53,.18));
+  pointer-events:none;
 }
-.wrap{width:min(760px,calc(100% - 28px));margin:auto}
-.topbar{display:flex;justify-content:flex-end;padding-top:18px}
-.lang{display:flex;background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.3);padding:4px;border-radius:999px;backdrop-filter:blur(10px)}
-.lang button{border:0;background:transparent;color:#fff;padding:9px 15px;border-radius:999px;font-weight:900;cursor:pointer}
+.topbar{
+  display:flex;
+  justify-content:flex-end;
+  padding-top:16px;
+  position:relative;
+  z-index:2;
+}
+.lang{
+  display:flex;
+  background:rgba(255,255,255,.14);
+  border:1px solid rgba(255,255,255,.34);
+  padding:4px;
+  border-radius:999px;
+  backdrop-filter:blur(10px);
+}
+.lang button{
+  border:0;
+  background:transparent;
+  color:#fff;
+  padding:9px 16px;
+  border-radius:999px;
+  font-weight:900;
+  cursor:pointer;
+}
 .lang button.active{background:var(--yellow);color:var(--navy)}
-.hero-content{padding:42px 0 52px;text-align:center;position:relative;z-index:2}
-.logo{width:min(360px,78vw);display:block;margin:0 auto 22px;filter:drop-shadow(0 12px 26px rgba(0,0,0,.35))}
-.tag{font-weight:950;letter-spacing:.12em;color:var(--yellow);font-size:clamp(1rem,4vw,1.3rem)}
-.hero p{max-width:560px;margin:14px auto 24px;color:#e3edf8;font-size:1.08rem;line-height:1.55}
-.hero-actions{display:grid;gap:12px;max-width:580px;margin:0 auto}
-.primary,.secondary{display:flex;align-items:center;justify-content:center;gap:10px;padding:18px;border-radius:18px;font-weight:950;font-size:1.06rem}
-.primary{background:var(--yellow);color:var(--navy);box-shadow:0 12px 28px rgba(255,210,31,.28)}
-.secondary{background:rgba(6,26,53,.82);color:#fff;border:1px solid rgba(255,255,255,.35);backdrop-filter:blur(10px)}
-.panel{background:#fff;border-radius:30px 30px 0 0;margin-top:-34px;position:relative;z-index:3;padding:22px 0 42px}
-.contact-card,.section{background:#fff;border-radius:24px;box-shadow:var(--shadow);padding:18px;margin-bottom:16px}
-.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:11px}
-.btn{display:flex;align-items:center;gap:11px;padding:14px;border-radius:16px;background:#f5f8fc;border:1px solid #dce5ef;font-weight:850;min-height:62px}
-.icon{width:38px;height:38px;border-radius:12px;display:grid;place-items:center;background:var(--navy);color:#fff;flex:none;font-size:1.15rem}
-.section h2{margin:0 0 15px;color:var(--navy);font-size:1.35rem}
-.gallery-title{margin:22px 0 12px;color:var(--navy);font-size:1.05rem;padding-left:12px;border-left:5px solid var(--yellow)}
-.services{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.service{background:#f5f8fc;border-radius:15px;padding:13px;font-weight:800}
-.service:before{content:"⚡";margin-right:8px}
-.gallery{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.gallery figure{margin:0;position:relative;overflow:hidden;border-radius:18px;background:#dfe6ee;aspect-ratio:1/1.05}
-.gallery img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .25s ease}
-.gallery figure:hover img{transform:scale(1.03)}
-.gallery figcaption{position:absolute;left:0;right:0;bottom:0;padding:28px 12px 11px;color:#fff;font-weight:900;background:linear-gradient(transparent,rgba(0,0,0,.8))}
-.areas{color:var(--muted);line-height:1.75;margin:0}
-.footer{background:linear-gradient(135deg,var(--navy),var(--navy2));color:#fff;padding:24px;border-radius:22px;text-align:center}
-.footer img{width:180px;max-width:60%;margin-bottom:10px}
-.footer p{margin:5px 0;color:#d9e4f1}
+
+.hero-content{
+  position:relative;
+  z-index:2;
+  text-align:center;
+  padding:28px 0 38px;
+}
+.logo{
+  width:min(225px,58vw);
+  height:auto;
+  display:block;
+  margin:0 auto 12px;
+  filter:drop-shadow(0 8px 18px rgba(0,0,0,.36));
+}
+.tag{
+  color:var(--yellow);
+  font-weight:950;
+  letter-spacing:.14em;
+  font-size:clamp(.95rem,3.6vw,1.17rem);
+}
+.hero-copy{
+  margin:11px auto 16px;
+  max-width:560px;
+  color:#e7eef7;
+  line-height:1.5;
+  font-size:1rem;
+}
+.trust-strip{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:8px;
+  margin:0 auto 18px;
+}
+.trust-pill{
+  padding:7px 11px;
+  border-radius:999px;
+  color:#fff;
+  background:rgba(6,26,53,.7);
+  border:1px solid rgba(255,255,255,.23);
+  font-size:.82rem;
+  font-weight:800;
+  backdrop-filter:blur(8px);
+}
+.hero-actions{
+  display:grid;
+  gap:11px;
+  max-width:580px;
+  margin:0 auto;
+}
+.cta{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  min-height:58px;
+  padding:15px 18px;
+  border-radius:18px;
+  font-weight:950;
+  font-size:1.02rem;
+}
+.cta-primary{
+  background:var(--yellow);
+  color:var(--navy);
+  box-shadow:0 12px 28px rgba(255,210,31,.25);
+}
+.cta-secondary{
+  background:rgba(6,26,53,.84);
+  color:#fff;
+  border:1px solid rgba(255,255,255,.35);
+  backdrop-filter:blur(10px);
+}
+.panel{
+  margin-top:-24px;
+  position:relative;
+  z-index:3;
+  padding-bottom:100px;
+}
+.card,.section{
+  background:#fff;
+  border-radius:24px;
+  box-shadow:var(--shadow);
+  padding:18px;
+  margin-bottom:16px;
+}
+.contact-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px;
+}
+.action{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  padding:14px;
+  min-height:64px;
+  border-radius:17px;
+  background:#f7f9fc;
+  border:1px solid var(--line);
+  font-weight:850;
+  transition:.18s ease;
+}
+.action:hover{background:#eef4fa;transform:translateY(-1px)}
+.action:active{transform:scale(.985)}
+.icon{
+  width:40px;
+  height:40px;
+  border-radius:12px;
+  display:grid;
+  place-items:center;
+  flex:none;
+  background:var(--navy);
+  color:#fff;
+}
+.icon svg{
+  width:22px;
+  height:22px;
+  stroke:currentColor;
+  fill:none;
+  stroke-width:2;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+}
+.icon.brand svg{fill:currentColor;stroke:none}
+.section h2{
+  margin:0 0 14px;
+  color:var(--navy);
+  font-size:1.3rem;
+}
+.services{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px;
+}
+.service{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  background:#f7f9fc;
+  border:1px solid var(--line);
+  border-radius:15px;
+  padding:12px;
+  font-weight:800;
+}
+.service-bolt{color:#f0b900;font-size:1.05rem}
+.more-services{
+  margin-top:14px;
+  padding:16px;
+  border-radius:16px;
+  text-align:center;
+  background:linear-gradient(135deg,var(--navy),var(--navy2));
+  color:#fff;
+}
+.more-services strong{display:block;color:var(--yellow);font-size:1.02rem;margin-bottom:3px}
+.more-services span{color:#dce7f4}
+.why-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px;
+}
+.why{
+  padding:15px;
+  border-radius:16px;
+  border:1px solid var(--line);
+  background:#f7f9fc;
+  text-align:center;
+}
+.why .why-icon{
+  width:42px;height:42px;border-radius:50%;margin:0 auto 9px;
+  display:grid;place-items:center;background:var(--yellow);color:var(--navy);font-weight:1000;
+}
+.why strong{display:block;color:var(--navy)}
+.why span{display:block;color:var(--muted);font-size:.86rem;margin-top:4px;line-height:1.35}
+.gallery-title{
+  margin:22px 0 11px;
+  padding-left:11px;
+  border-left:5px solid var(--yellow);
+  color:var(--navy);
+  font-size:1rem;
+}
+.gallery{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px;
+}
+.gallery figure{
+  margin:0;
+  overflow:hidden;
+  border-radius:18px;
+  background:#dfe6ee;
+  position:relative;
+  aspect-ratio:1/1.02;
+  cursor:pointer;
+}
+.gallery img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+  transition:transform .25s ease;
+}
+.gallery figure:hover img{transform:scale(1.035)}
+.gallery figcaption{
+  position:absolute;
+  left:0;right:0;bottom:0;
+  padding:28px 12px 11px;
+  color:#fff;
+  font-weight:900;
+  background:linear-gradient(transparent,rgba(0,0,0,.82));
+}
+.areas{margin:0;color:var(--muted);line-height:1.75}
+.footer{
+  text-align:center;
+  color:#fff;
+  padding:22px;
+  border-radius:22px;
+  background:linear-gradient(135deg,var(--navy),var(--navy2));
+}
+.footer img{width:145px;max-width:55%;margin-bottom:8px}
+.footer p{margin:5px 0;color:#dce7f4}
 .footer a{color:var(--yellow);font-weight:900}
-.small{font-size:.82rem;color:#95a9bf}
+.small{font-size:.8rem;color:#98acc2}
+
+.float-bar{
+  position:fixed;
+  left:50%;
+  bottom:14px;
+  transform:translateX(-50%);
+  width:min(520px,calc(100% - 20px));
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:8px;
+  padding:8px;
+  border-radius:20px;
+  background:rgba(6,26,53,.94);
+  border:1px solid rgba(255,255,255,.14);
+  box-shadow:0 18px 44px rgba(0,0,0,.28);
+  backdrop-filter:blur(14px);
+  z-index:20;
+}
+.float-bar a{
+  min-height:48px;
+  border-radius:14px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:7px;
+  color:#fff;
+  font-weight:900;
+  font-size:.9rem;
+}
+.float-bar a.primary-float{background:var(--yellow);color:var(--navy)}
+
+.modal{
+  position:fixed;
+  inset:0;
+  display:none;
+  place-items:center;
+  padding:20px;
+  background:rgba(1,10,23,.92);
+  z-index:100;
+}
+.modal.open{display:grid}
+.modal-content{
+  max-width:min(1000px,96vw);
+  max-height:88vh;
+  position:relative;
+}
+.modal img{
+  max-width:100%;
+  max-height:82vh;
+  display:block;
+  border-radius:18px;
+  box-shadow:0 24px 70px rgba(0,0,0,.5);
+}
+.modal-caption{
+  color:#fff;
+  text-align:center;
+  font-weight:900;
+  margin-top:10px;
+}
+.modal-close{
+  position:absolute;
+  top:-14px;
+  right:-14px;
+  width:42px;
+  height:42px;
+  border-radius:50%;
+  border:0;
+  background:var(--yellow);
+  color:var(--navy);
+  font-size:1.5rem;
+  font-weight:1000;
+  cursor:pointer;
+}
 @media(max-width:520px){
-  .hero{min-height:610px}
-  .contact-grid,.services,.gallery{grid-template-columns:1fr}
-  .wrap{width:min(100% - 18px,760px)}
-  .panel{margin-top:-28px}
+  .wrap{width:min(100% - 16px,780px)}
+  .hero{min-height:540px;background-position:center 40%}
+  .hero-content{padding-top:24px}
+  .logo{width:min(205px,56vw)}
+  .contact-grid,.services,.gallery,.why-grid{grid-template-columns:1fr}
+  .float-bar span.label{display:none}
 }
 </style>
 </head>
 <body>
+
 <header class="hero">
   <div class="wrap">
     <div class="topbar">
-      <div class="lang">
+      <div class="lang" aria-label="Language selector">
         <button id="enBtn" class="active" onclick="setLang('en')">EN</button>
         <button id="esBtn" onclick="setLang('es')">ES</button>
       </div>
     </div>
+
     <div class="hero-content">
       <img src="logo.png" alt="JG Electric logo" class="logo">
       <div class="tag" data-en="FAST • RELIABLE • LOCAL" data-es="RÁPIDO • CONFIABLE • LOCAL">FAST • RELIABLE • LOCAL</div>
-      <p data-en="Licensed & Insured Electrician serving Southern New Hampshire."
+      <p class="hero-copy"
+         data-en="Licensed & Insured Electrician serving Southern New Hampshire."
          data-es="Electricista licenciado y asegurado sirviendo el sur de New Hampshire.">
          Licensed & Insured Electrician serving Southern New Hampshire.
       </p>
+
+      <div class="trust-strip">
+        <span class="trust-pill" data-en="Residential & Commercial" data-es="Residencial y comercial">Residential & Commercial</span>
+        <span class="trust-pill" data-en="Quality Workmanship" data-es="Trabajo de calidad">Quality Workmanship</span>
+        <span class="trust-pill" data-en="Local Service" data-es="Servicio local">Local Service</span>
+      </div>
+
       <div class="hero-actions">
-        <a class="primary" href="https://g.page/r/CYesLuhC5T9GEBM/review" target="_blank" rel="noopener">⭐ <span data-en="Leave a Google Review" data-es="Dejar una reseña en Google">Leave a Google Review</span></a>
-        <a class="secondary" id="estimateTop" href="https://wa.me/16032330736?text=Hi%20JG%20Electric%21%20I%27d%20like%20to%20request%20an%20estimate." target="_blank" rel="noopener">⚡ <span data-en="Request a Free Estimate" data-es="Solicitar un estimado gratis">Request a Free Estimate</span></a>
+        <a class="cta cta-primary" href="https://g.page/r/CYesLuhC5T9GEBM/review" target="_blank" rel="noopener">
+          <span>★</span>
+          <span data-en="Leave a Google Review" data-es="Dejar una reseña en Google">Leave a Google Review</span>
+        </a>
+        <a class="cta cta-secondary" id="estimateTop"
+           href="https://wa.me/16032330736?text=Hi%20JG%20Electric%21%20I%27d%20like%20to%20request%20an%20estimate."
+           target="_blank" rel="noopener">
+          <span>⚡</span>
+          <span data-en="Request a Free Estimate" data-es="Solicitar un estimado gratis">Request a Free Estimate</span>
+        </a>
       </div>
     </div>
   </div>
@@ -93,30 +424,79 @@ a{text-decoration:none;color:inherit}
 
 <main class="panel">
   <div class="wrap">
-    <section class="contact-card">
+
+    <section class="card">
       <div class="contact-grid">
-        <a class="btn" href="tel:+16032330736"><span class="icon">☎</span><span data-en="Call Now" data-es="Llamar ahora">Call Now</span></a>
-        <a class="btn" href="sms:+16032330736"><span class="icon">✉</span><span data-en="Send a Text" data-es="Enviar mensaje">Send a Text</span></a>
-        <a class="btn" id="waLink" href="https://wa.me/16032330736?text=Hi%20JG%20Electric%21" target="_blank" rel="noopener"><span class="icon">◉</span><span>WhatsApp</span></a>
-        <a class="btn" href="https://www.instagram.com/jgelectric.llc/" target="_blank" rel="noopener"><span class="icon">◎</span><span>Instagram</span></a>
-        <a class="btn" href="https://www.facebook.com/share/19Btm5xzdP/?mibextid=wwXIfr" target="_blank" rel="noopener"><span class="icon">f</span><span>Facebook</span></a>
-        <a class="btn" href="mailto:jgelectricoffice@gmail.com"><span class="icon">@</span><span data-en="Email Us" data-es="Enviar correo">Email Us</span></a>
-        <a class="btn" href="JG-Electric.vcf" download><span class="icon">+</span><span data-en="Save Contact" data-es="Guardar contacto">Save Contact</span></a>
-        <a class="btn" href="#gallery"><span class="icon">▣</span><span data-en="View Our Work" data-es="Ver nuestros trabajos">View Our Work</span></a>
+
+        <a class="action" href="tel:+16032330736">
+          <span class="icon"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07A19.5 19.5 0 0 1 5.15 12.8 19.8 19.8 0 0 1 2.08 4.18 2 2 0 0 1 4.07 2h3a2 2 0 0 1 2 1.72c.12.9.33 1.78.62 2.63a2 2 0 0 1-.45 2.11L8 9.69a16 16 0 0 0 6 6l1.23-1.23a2 2 0 0 1 2.11-.45c.85.29 1.73.5 2.63.62A2 2 0 0 1 22 16.92z"/></svg></span>
+          <span data-en="Call Now" data-es="Llamar ahora">Call Now</span>
+        </a>
+
+        <a class="action" href="sms:+16032330736">
+          <span class="icon"><svg viewBox="0 0 24 24"><path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z"/></svg></span>
+          <span data-en="Send a Text" data-es="Enviar mensaje">Send a Text</span>
+        </a>
+
+        <a class="action" id="waLink" href="https://wa.me/16032330736?text=Hi%20JG%20Electric%21" target="_blank" rel="noopener">
+          <span class="icon brand"><svg viewBox="0 0 24 24"><path d="M12.1 2a9.8 9.8 0 0 0-8.4 14.9L2 22l5.3-1.7A9.9 9.9 0 1 0 12.1 2zm5.8 14.2c-.2.6-1.2 1.2-1.8 1.3-.5.1-1.2.2-3.8-.9-3.2-1.3-5.2-4.5-5.4-4.7-.2-.3-1.3-1.8-1.3-3.4s.8-2.4 1.1-2.7c.3-.3.6-.4.8-.4h.6c.2 0 .5-.1.7.5.2.6.8 2 .9 2.2.1.2.1.4 0 .6-.1.2-.2.4-.4.6-.2.2-.4.5-.6.7-.2.2-.4.4-.2.8.2.4.9 1.5 2 2.4 1.3 1.2 2.4 1.6 2.8 1.8.4.2.6.2.8-.1.3-.3 1-1.2 1.3-1.6.3-.4.5-.3.9-.2.4.1 2.3 1.1 2.7 1.3.4.2.6.3.7.5.1.1.1.8-.1 1.3z"/></svg></span>
+          <span>WhatsApp</span>
+        </a>
+
+        <a class="action" href="https://www.instagram.com/jgelectric.llc/" target="_blank" rel="noopener">
+          <span class="icon"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></span>
+          <span>Instagram</span>
+        </a>
+
+        <a class="action" href="https://www.facebook.com/share/19Btm5xzdP/?mibextid=wwXIfr" target="_blank" rel="noopener">
+          <span class="icon brand"><svg viewBox="0 0 24 24"><path d="M14 8h3V4h-3c-3.3 0-5 2-5 5v2H6v4h3v7h4v-7h3l1-4h-4V9c0-.7.3-1 1-1z"/></svg></span>
+          <span>Facebook</span>
+        </a>
+
+        <a class="action" href="mailto:jgelectricoffice@gmail.com">
+          <span class="icon"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span>
+          <span data-en="Email Us" data-es="Enviar correo">Email Us</span>
+        </a>
+
+        <a class="action" href="JG-Electric.vcf" download>
+          <span class="icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/><path d="M19 3v4M17 5h4"/></svg></span>
+          <span data-en="Save Contact" data-es="Guardar contacto">Save Contact</span>
+        </a>
+
+        <a class="action" href="#gallery">
+          <span class="icon"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg></span>
+          <span data-en="View Our Work" data-es="Ver nuestros trabajos">View Our Work</span>
+        </a>
+
       </div>
     </section>
 
     <section class="section">
       <h2 data-en="Electrical Services" data-es="Servicios eléctricos">Electrical Services</h2>
       <div class="services">
-        <div class="service" data-en="Troubleshooting" data-es="Diagnóstico de fallas">Troubleshooting</div>
-        <div class="service" data-en="Panel Upgrades" data-es="Actualización de paneles">Panel Upgrades</div>
-        <div class="service" data-en="EV Chargers" data-es="Cargadores para vehículos eléctricos">EV Chargers</div>
-        <div class="service" data-en="Indoor Lighting" data-es="Iluminación interior">Indoor Lighting</div>
-        <div class="service" data-en="Dedicated Circuits" data-es="Circuitos dedicados">Dedicated Circuits</div>
-        <div class="service" data-en="Remodel Wiring" data-es="Cableado para remodelaciones">Remodel Wiring</div>
-        <div class="service" data-en="Surge Protection" data-es="Protección contra sobretensiones">Surge Protection</div>
-        <div class="service" data-en="Landscape Lighting" data-es="Iluminación de paisaje">Landscape Lighting</div>
+        <div class="service"><span class="service-bolt">⚡</span><span data-en="Troubleshooting" data-es="Diagnóstico de fallas">Troubleshooting</span></div>
+        <div class="service"><span class="service-bolt">⚡</span><span data-en="Panel Upgrades" data-es="Actualización de paneles">Panel Upgrades</span></div>
+        <div class="service"><span class="service-bolt">⚡</span><span data-en="EV Chargers" data-es="Cargadores para vehículos eléctricos">EV Chargers</span></div>
+        <div class="service"><span class="service-bolt">⚡</span><span data-en="Recessed Lighting" data-es="Luces empotradas">Recessed Lighting</span></div>
+        <div class="service"><span class="service-bolt">⚡</span><span data-en="Dedicated Circuits" data-es="Circuitos dedicados">Dedicated Circuits</span></div>
+        <div class="service"><span class="service-bolt">⚡</span><span data-en="Remodel Wiring" data-es="Cableado para remodelaciones">Remodel Wiring</span></div>
+        <div class="service"><span class="service-bolt">⚡</span><span data-en="Surge Protection" data-es="Protección contra sobretensiones">Surge Protection</span></div>
+        <div class="service"><span class="service-bolt">⚡</span><span data-en="Landscape Lighting" data-es="Iluminación de paisaje">Landscape Lighting</span></div>
+      </div>
+
+      <div class="more-services">
+        <strong data-en="⚡ And much more..." data-es="⚡ Y mucho más...">⚡ And much more...</strong>
+        <span data-en="Contact us for any electrical project." data-es="Contáctenos para cualquier proyecto eléctrico.">Contact us for any electrical project.</span>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 data-en="Why Choose JG Electric?" data-es="¿Por qué elegir JG Electric?">Why Choose JG Electric?</h2>
+      <div class="why-grid">
+        <div class="why"><div class="why-icon">✓</div><strong data-en="Licensed & Insured" data-es="Licenciado y asegurado">Licensed & Insured</strong><span data-en="Professional protection and dependable service." data-es="Protección profesional y servicio confiable.">Professional protection and dependable service.</span></div>
+        <div class="why"><div class="why-icon">⚡</div><strong data-en="Fast Response" data-es="Respuesta rápida">Fast Response</strong><span data-en="Easy ways to call, text or message us." data-es="Formas fáciles de llamar o enviarnos un mensaje.">Easy ways to call, text or message us.</span></div>
+        <div class="why"><div class="why-icon">⌂</div><strong data-en="Residential & Commercial" data-es="Residencial y comercial">Residential & Commercial</strong><span data-en="Solutions for homes, businesses and remodels." data-es="Soluciones para hogares, negocios y remodelaciones.">Solutions for homes, businesses and remodels.</span></div>
+        <div class="why"><div class="why-icon">★</div><strong data-en="Quality Workmanship" data-es="Trabajo de calidad">Quality Workmanship</strong><span data-en="Clean, careful work done with pride." data-es="Trabajo limpio y cuidadoso hecho con orgullo.">Clean, careful work done with pride.</span></div>
       </div>
     </section>
 
@@ -126,14 +506,14 @@ a{text-decoration:none;color:inherit}
       <h3 class="gallery-title" data-en="Recessed Lighting" data-es="Luces empotradas">Recessed Lighting</h3>
       <div class="gallery">
         <figure><img src="recessed-living-room.jpg" alt="Living room recessed lighting"><figcaption data-en="Living Room Recessed Lighting" data-es="Luces empotradas en sala">Living Room Recessed Lighting</figcaption></figure>
-        <figure><img src="recessed-high-ceiling.jpg" alt="High ceiling recessed lighting and ceiling fan"><figcaption data-en="High-Ceiling Lighting" data-es="Iluminación en techo alto">High-Ceiling Lighting</figcaption></figure>
+        <figure><img src="recessed-high-ceiling.jpg" alt="High ceiling recessed lighting"><figcaption data-en="High-Ceiling Lighting" data-es="Iluminación en techo alto">High-Ceiling Lighting</figcaption></figure>
         <figure><img src="recessed-bathroom.jpg" alt="Bathroom recessed lighting"><figcaption data-en="Bathroom Recessed Lighting" data-es="Luces empotradas en baño">Bathroom Recessed Lighting</figcaption></figure>
         <figure><img src="entryway.jpg" alt="Entryway recessed lighting"><figcaption data-en="Entryway Recessed Lighting" data-es="Luces empotradas en entrada">Entryway Recessed Lighting</figcaption></figure>
       </div>
 
       <h3 class="gallery-title" data-en="Decorative Lighting" data-es="Iluminación decorativa">Decorative Lighting</h3>
       <div class="gallery">
-        <figure><img src="bathroom.jpg" alt="Bathroom vanity lighting project"><figcaption data-en="Bathroom Vanity Lighting" data-es="Iluminación de tocador">Bathroom Vanity Lighting</figcaption></figure>
+        <figure><img src="bathroom.jpg" alt="Bathroom vanity lighting"><figcaption data-en="Bathroom Vanity Lighting" data-es="Iluminación de tocador">Bathroom Vanity Lighting</figcaption></figure>
         <figure><img src="chandelier.jpg" alt="Chandelier installation"><figcaption data-en="Chandelier Installation" data-es="Instalación de candelabro">Chandelier Installation</figcaption></figure>
       </div>
 
@@ -156,30 +536,77 @@ a{text-decoration:none;color:inherit}
          data-es="Licenciado y asegurado • Rápido • Confiable • Local">Licensed & Insured • Fast • Reliable • Local</p>
       <div class="small">© 2026 JG Electric</div>
     </footer>
+
   </div>
 </main>
 
+<nav class="float-bar" aria-label="Quick contact">
+  <a href="tel:+16032330736"><span>☎</span><span class="label" data-en="Call" data-es="Llamar">Call</span></a>
+  <a href="sms:+16032330736"><span>✉</span><span class="label" data-en="Text" data-es="Mensaje">Text</span></a>
+  <a class="primary-float" id="floatWa" href="https://wa.me/16032330736?text=Hi%20JG%20Electric%21" target="_blank" rel="noopener"><span>◉</span><span class="label">WhatsApp</span></a>
+</nav>
+
+<div class="modal" id="imageModal" aria-hidden="true">
+  <div class="modal-content">
+    <button class="modal-close" id="modalClose" aria-label="Close image">×</button>
+    <img id="modalImage" src="" alt="">
+    <div class="modal-caption" id="modalCaption"></div>
+  </div>
+</div>
+
 <script>
-const translatable = document.querySelectorAll('[data-en][data-es]');
-const estimateTop = document.getElementById('estimateTop');
-const wa = document.getElementById('waLink');
+const translatable=document.querySelectorAll('[data-en][data-es]');
+const estimateTop=document.getElementById('estimateTop');
+const wa=document.getElementById('waLink');
+const floatWa=document.getElementById('floatWa');
+
 function setLang(lang){
-  translatable.forEach(el => el.textContent = el.dataset[lang]);
-  document.documentElement.lang = lang;
-  document.getElementById('enBtn').classList.toggle('active', lang === 'en');
-  document.getElementById('esBtn').classList.toggle('active', lang === 'es');
-  if(lang === 'es'){
+  translatable.forEach(el=>el.textContent=el.dataset[lang]);
+  document.documentElement.lang=lang;
+  document.getElementById('enBtn').classList.toggle('active',lang==='en');
+  document.getElementById('esBtn').classList.toggle('active',lang==='es');
+
+  if(lang==='es'){
     estimateTop.href='https://wa.me/16032330736?text=Hola%20JG%20Electric%21%20Me%20gustar%C3%ADa%20solicitar%20un%20estimado.';
     wa.href='https://wa.me/16032330736?text=Hola%20JG%20Electric%21';
+    floatWa.href='https://wa.me/16032330736?text=Hola%20JG%20Electric%21';
   }else{
     estimateTop.href='https://wa.me/16032330736?text=Hi%20JG%20Electric%21%20I%27d%20like%20to%20request%20an%20estimate.';
     wa.href='https://wa.me/16032330736?text=Hi%20JG%20Electric%21';
+    floatWa.href='https://wa.me/16032330736?text=Hi%20JG%20Electric%21';
   }
   localStorage.setItem('jg-language',lang);
 }
 const saved=localStorage.getItem('jg-language');
 const browser=(navigator.language||'en').toLowerCase().startsWith('es')?'es':'en';
 setLang(saved||browser);
+
+const modal=document.getElementById('imageModal');
+const modalImage=document.getElementById('modalImage');
+const modalCaption=document.getElementById('modalCaption');
+const modalClose=document.getElementById('modalClose');
+
+document.querySelectorAll('.gallery figure').forEach(figure=>{
+  figure.addEventListener('click',()=>{
+    const img=figure.querySelector('img');
+    const caption=figure.querySelector('figcaption');
+    modalImage.src=img.src;
+    modalImage.alt=img.alt;
+    modalCaption.textContent=caption.textContent;
+    modal.classList.add('open');
+    modal.setAttribute('aria-hidden','false');
+    document.body.classList.add('modal-open');
+  });
+});
+
+function closeModal(){
+  modal.classList.remove('open');
+  modal.setAttribute('aria-hidden','true');
+  document.body.classList.remove('modal-open');
+}
+modalClose.addEventListener('click',closeModal);
+modal.addEventListener('click',e=>{if(e.target===modal)closeModal()});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal()});
 </script>
 </body>
 </html>
