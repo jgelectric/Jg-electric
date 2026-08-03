@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#061a35">
+<meta name="description" content="JG Electric — Licensed & Insured electrician serving Southern New Hampshire.">
+<title>JG Electric | Fast • Reliable • Local</title>
+<style>
+:root{
+  --navy:#061a35; --navy2:#0b2a55; --yellow:#ffd21f; --white:#fff;
+  --light:#f4f7fb; --text:#0e2036; --muted:#62738a; --shadow:0 18px 42px rgba(2,18,37,.18);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:var(--light);color:var(--text)}
+a{text-decoration:none;color:inherit}
+.hero{
+  min-height:640px;background:
+    linear-gradient(180deg,rgba(3,18,39,.72),rgba(3,18,39,.92)),
+    url('truck.jpg') center/cover no-repeat;
+  color:#fff;position:relative;overflow:hidden
+}
+.hero:after{
+  content:"";position:absolute;inset:auto -80px -120px auto;width:340px;height:340px;
+  background:radial-gradient(circle,rgba(255,210,31,.25),transparent 65%)
+}
+.wrap{width:min(760px,calc(100% - 28px));margin:auto}
+.topbar{display:flex;justify-content:flex-end;padding-top:18px}
+.lang{display:flex;background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.3);padding:4px;border-radius:999px;backdrop-filter:blur(10px)}
+.lang button{border:0;background:transparent;color:#fff;padding:9px 15px;border-radius:999px;font-weight:900;cursor:pointer}
+.lang button.active{background:var(--yellow);color:var(--navy)}
+.hero-content{padding:42px 0 52px;text-align:center;position:relative;z-index:2}
+.logo{width:min(360px,78vw);display:block;margin:0 auto 22px;filter:drop-shadow(0 12px 26px rgba(0,0,0,.35))}
+.tag{font-weight:950;letter-spacing:.12em;color:var(--yellow);font-size:clamp(1rem,4vw,1.3rem)}
+.hero p{max-width:560px;margin:14px auto 24px;color:#e3edf8;font-size:1.08rem;line-height:1.55}
+.hero-actions{display:grid;gap:12px;max-width:580px;margin:0 auto}
+.primary,.secondary{display:flex;align-items:center;justify-content:center;gap:10px;padding:18px;border-radius:18px;font-weight:950;font-size:1.06rem}
+.primary{background:var(--yellow);color:var(--navy);box-shadow:0 12px 28px rgba(255,210,31,.28)}
+.secondary{background:rgba(6,26,53,.82);color:#fff;border:1px solid rgba(255,255,255,.35);backdrop-filter:blur(10px)}
+.panel{background:#fff;border-radius:30px 30px 0 0;margin-top:-34px;position:relative;z-index:3;padding:22px 0 42px}
+.contact-card,.section{background:#fff;border-radius:24px;box-shadow:var(--shadow);padding:18px;margin-bottom:16px}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:11px}
+.btn{display:flex;align-items:center;gap:11px;padding:14px;border-radius:16px;background:#f5f8fc;border:1px solid #dce5ef;font-weight:850;min-height:62px}
+.icon{width:38px;height:38px;border-radius:12px;display:grid;place-items:center;background:var(--navy);color:#fff;flex:none;font-size:1.15rem}
+.section h2{margin:0 0 15px;color:var(--navy);font-size:1.35rem}
+.gallery-title{margin:22px 0 12px;color:var(--navy);font-size:1.05rem;padding-left:12px;border-left:5px solid var(--yellow)}
+.services{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.service{background:#f5f8fc;border-radius:15px;padding:13px;font-weight:800}
+.service:before{content:"⚡";margin-right:8px}
+.gallery{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.gallery figure{margin:0;position:relative;overflow:hidden;border-radius:18px;background:#dfe6ee;aspect-ratio:1/1.05}
+.gallery img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .25s ease}
+.gallery figure:hover img{transform:scale(1.03)}
+.gallery figcaption{position:absolute;left:0;right:0;bottom:0;padding:28px 12px 11px;color:#fff;font-weight:900;background:linear-gradient(transparent,rgba(0,0,0,.8))}
+.areas{color:var(--muted);line-height:1.75;margin:0}
+.footer{background:linear-gradient(135deg,var(--navy),var(--navy2));color:#fff;padding:24px;border-radius:22px;text-align:center}
+.footer img{width:180px;max-width:60%;margin-bottom:10px}
+.footer p{margin:5px 0;color:#d9e4f1}
+.footer a{color:var(--yellow);font-weight:900}
+.small{font-size:.82rem;color:#95a9bf}
+@media(max-width:520px){
+  .hero{min-height:610px}
+  .contact-grid,.services,.gallery{grid-template-columns:1fr}
+  .wrap{width:min(100% - 18px,760px)}
+  .panel{margin-top:-28px}
+}
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="wrap">
+    <div class="topbar">
+      <div class="lang">
+        <button id="enBtn" class="active" onclick="setLang('en')">EN</button>
+        <button id="esBtn" onclick="setLang('es')">ES</button>
+      </div>
+    </div>
+    <div class="hero-content">
+      <img src="logo.png" alt="JG Electric logo" class="logo">
+      <div class="tag" data-en="FAST • RELIABLE • LOCAL" data-es="RÁPIDO • CONFIABLE • LOCAL">FAST • RELIABLE • LOCAL</div>
+      <p data-en="Licensed & Insured Electrician serving Southern New Hampshire."
+         data-es="Electricista licenciado y asegurado sirviendo el sur de New Hampshire.">
+         Licensed & Insured Electrician serving Southern New Hampshire.
+      </p>
+      <div class="hero-actions">
+        <a class="primary" href="https://g.page/r/CYesLuhC5T9GEBM/review" target="_blank" rel="noopener">⭐ <span data-en="Leave a Google Review" data-es="Dejar una reseña en Google">Leave a Google Review</span></a>
+        <a class="secondary" id="estimateTop" href="https://wa.me/16032330736?text=Hi%20JG%20Electric%21%20I%27d%20like%20to%20request%20an%20estimate." target="_blank" rel="noopener">⚡ <span data-en="Request a Free Estimate" data-es="Solicitar un estimado gratis">Request a Free Estimate</span></a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main class="panel">
+  <div class="wrap">
+    <section class="contact-card">
+      <div class="contact-grid">
+        <a class="btn" href="tel:+16032330736"><span class="icon">☎</span><span data-en="Call Now" data-es="Llamar ahora">Call Now</span></a>
+        <a class="btn" href="sms:+16032330736"><span class="icon">✉</span><span data-en="Send a Text" data-es="Enviar mensaje">Send a Text</span></a>
+        <a class="btn" id="waLink" href="https://wa.me/16032330736?text=Hi%20JG%20Electric%21" target="_blank" rel="noopener"><span class="icon">◉</span><span>WhatsApp</span></a>
+        <a class="btn" href="https://www.instagram.com/jgelectric.llc/" target="_blank" rel="noopener"><span class="icon">◎</span><span>Instagram</span></a>
+        <a class="btn" href="https://www.facebook.com/share/19Btm5xzdP/?mibextid=wwXIfr" target="_blank" rel="noopener"><span class="icon">f</span><span>Facebook</span></a>
+        <a class="btn" href="mailto:jgelectricoffice@gmail.com"><span class="icon">@</span><span data-en="Email Us" data-es="Enviar correo">Email Us</span></a>
+        <a class="btn" href="JG-Electric.vcf" download><span class="icon">+</span><span data-en="Save Contact" data-es="Guardar contacto">Save Contact</span></a>
+        <a class="btn" href="#gallery"><span class="icon">▣</span><span data-en="View Our Work" data-es="Ver nuestros trabajos">View Our Work</span></a>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 data-en="Electrical Services" data-es="Servicios eléctricos">Electrical Services</h2>
+      <div class="services">
+        <div class="service" data-en="Troubleshooting" data-es="Diagnóstico de fallas">Troubleshooting</div>
+        <div class="service" data-en="Panel Upgrades" data-es="Actualización de paneles">Panel Upgrades</div>
+        <div class="service" data-en="EV Chargers" data-es="Cargadores para vehículos eléctricos">EV Chargers</div>
+        <div class="service" data-en="Indoor Lighting" data-es="Iluminación interior">Indoor Lighting</div>
+        <div class="service" data-en="Dedicated Circuits" data-es="Circuitos dedicados">Dedicated Circuits</div>
+        <div class="service" data-en="Remodel Wiring" data-es="Cableado para remodelaciones">Remodel Wiring</div>
+        <div class="service" data-en="Surge Protection" data-es="Protección contra sobretensiones">Surge Protection</div>
+        <div class="service" data-en="Landscape Lighting" data-es="Iluminación de paisaje">Landscape Lighting</div>
+      </div>
+    </section>
+
+    <section class="section" id="gallery">
+      <h2 data-en="Our Work" data-es="Nuestros trabajos">Our Work</h2>
+
+      <h3 class="gallery-title" data-en="Recessed Lighting" data-es="Luces empotradas">Recessed Lighting</h3>
+      <div class="gallery">
+        <figure><img src="recessed-living-room.jpg" alt="Living room recessed lighting"><figcaption data-en="Living Room Recessed Lighting" data-es="Luces empotradas en sala">Living Room Recessed Lighting</figcaption></figure>
+        <figure><img src="recessed-high-ceiling.jpg" alt="High ceiling recessed lighting and ceiling fan"><figcaption data-en="High-Ceiling Lighting" data-es="Iluminación en techo alto">High-Ceiling Lighting</figcaption></figure>
+        <figure><img src="recessed-bathroom.jpg" alt="Bathroom recessed lighting"><figcaption data-en="Bathroom Recessed Lighting" data-es="Luces empotradas en baño">Bathroom Recessed Lighting</figcaption></figure>
+        <figure><img src="entryway.jpg" alt="Entryway recessed lighting"><figcaption data-en="Entryway Recessed Lighting" data-es="Luces empotradas en entrada">Entryway Recessed Lighting</figcaption></figure>
+      </div>
+
+      <h3 class="gallery-title" data-en="Decorative Lighting" data-es="Iluminación decorativa">Decorative Lighting</h3>
+      <div class="gallery">
+        <figure><img src="bathroom.jpg" alt="Bathroom vanity lighting project"><figcaption data-en="Bathroom Vanity Lighting" data-es="Iluminación de tocador">Bathroom Vanity Lighting</figcaption></figure>
+        <figure><img src="chandelier.jpg" alt="Chandelier installation"><figcaption data-en="Chandelier Installation" data-es="Instalación de candelabro">Chandelier Installation</figcaption></figure>
+      </div>
+
+      <h3 class="gallery-title" data-en="Landscape Lighting" data-es="Iluminación de paisaje">Landscape Lighting</h3>
+      <div class="gallery">
+        <figure><img src="landscape-transformer.jpg" alt="Low voltage landscape lighting transformer"><figcaption data-en="Low-Voltage Transformer" data-es="Transformador de bajo voltaje">Low-Voltage Transformer</figcaption></figure>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 data-en="Serving Southern New Hampshire" data-es="Sirviendo el sur de New Hampshire">Serving Southern New Hampshire</h2>
+      <p class="areas">Hudson • Nashua • Merrimack • Londonderry • Windham • Salem • Manchester • Derry • Bedford • Litchfield • Amherst</p>
+    </section>
+
+    <footer class="footer">
+      <img src="logo.png" alt="JG Electric logo">
+      <p><strong>603-233-0736</strong></p>
+      <p><a href="mailto:jgelectricoffice@gmail.com">jgelectricoffice@gmail.com</a></p>
+      <p data-en="Licensed & Insured • Fast • Reliable • Local"
+         data-es="Licenciado y asegurado • Rápido • Confiable • Local">Licensed & Insured • Fast • Reliable • Local</p>
+      <div class="small">© 2026 JG Electric</div>
+    </footer>
+  </div>
+</main>
+
+<script>
+const translatable = document.querySelectorAll('[data-en][data-es]');
+const estimateTop = document.getElementById('estimateTop');
+const wa = document.getElementById('waLink');
+function setLang(lang){
+  translatable.forEach(el => el.textContent = el.dataset[lang]);
+  document.documentElement.lang = lang;
+  document.getElementById('enBtn').classList.toggle('active', lang === 'en');
+  document.getElementById('esBtn').classList.toggle('active', lang === 'es');
+  if(lang === 'es'){
+    estimateTop.href='https://wa.me/16032330736?text=Hola%20JG%20Electric%21%20Me%20gustar%C3%ADa%20solicitar%20un%20estimado.';
+    wa.href='https://wa.me/16032330736?text=Hola%20JG%20Electric%21';
+  }else{
+    estimateTop.href='https://wa.me/16032330736?text=Hi%20JG%20Electric%21%20I%27d%20like%20to%20request%20an%20estimate.';
+    wa.href='https://wa.me/16032330736?text=Hi%20JG%20Electric%21';
+  }
+  localStorage.setItem('jg-language',lang);
+}
+const saved=localStorage.getItem('jg-language');
+const browser=(navigator.language||'en').toLowerCase().startsWith('es')?'es':'en';
+setLang(saved||browser);
+</script>
+</body>
+</html>
