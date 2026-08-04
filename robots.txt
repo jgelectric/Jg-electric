@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://jgelectric.github.io/Jg-electric/sitemap.xml
