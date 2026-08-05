@@ -80,14 +80,14 @@ button{font:inherit}
 .lang button{border:0;background:transparent;color:#fff;padding:9px 16px;border-radius:999px;font-weight:850;cursor:pointer}
 .lang button.active{background:var(--yellow);color:var(--navy)}
 .hero-content{position:relative;z-index:2;text-align:center;padding:18px 0 34px}
-.logo{width:min(268px,67vw);height:auto;display:block;margin:0 auto 14px;padding:0;background:transparent;border:0;border-radius:0;box-shadow:none;filter:drop-shadow(0 8px 18px rgba(0,0,0,.42)) drop-shadow(0 0 16px rgba(255,210,31,.14))}
+.logo{width:min(292px,73vw);height:auto;display:block;margin:0 auto 10px;padding:0;background:transparent;border:0;border-radius:0;box-shadow:none;filter:drop-shadow(0 8px 18px rgba(0,0,0,.42)) drop-shadow(0 0 16px rgba(255,210,31,.14))}
 .tag{color:var(--yellow);font-weight:900;letter-spacing:.14em;font-size:clamp(.95rem,3.6vw,1.17rem)}
-.hero-copy{margin:11px auto 16px;max-width:560px;color:#e7eef7;line-height:1.5;font-size:1rem}
+.hero-copy{margin:8px auto 12px;max-width:560px;color:#e7eef7;line-height:1.5;font-size:1rem}
 .trust-strip{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin:0 auto 14px}
 .trust-pill{padding:7px 11px;border-radius:999px;color:#fff;background:rgba(6,26,53,.7);border:1px solid rgba(255,255,255,.23);font-size:.82rem;font-weight:800;backdrop-filter:blur(8px)}
-.hero-actions{display:grid;gap:11px;max-width:580px;margin:0 auto}
-.review-stars{color:var(--yellow);font-size:1.15rem;letter-spacing:.18em;margin:2px auto 5px;text-shadow:0 3px 10px rgba(0,0,0,.28)}
-.cta{display:flex;align-items:center;justify-content:center;gap:10px;min-height:58px;padding:15px 18px;border-radius:18px;font-weight:950;font-size:1.02rem}
+.hero-actions{display:grid;gap:9px;max-width:580px;margin:0 auto}
+.review-stars{color:var(--yellow);font-size:1.15rem;letter-spacing:.18em;margin:0 auto 4px;text-shadow:0 3px 10px rgba(0,0,0,.28)}
+.cta{display:flex;align-items:center;justify-content:center;gap:10px;min-height:54px;padding:13px 18px;border-radius:18px;font-weight:950;font-size:1.02rem}
 .cta-primary{background:var(--yellow);color:var(--navy);box-shadow:0 12px 28px rgba(255,210,31,.25)}
 .cta-secondary{background:rgba(6,26,53,.76);color:#fff;border:1px solid rgba(255,255,255,.35);backdrop-filter:blur(10px)}
 .panel{margin-top:-24px;position:relative;z-index:3;padding-bottom:100px}
@@ -146,18 +146,30 @@ button{font:inherit}
 .modal-close{position:absolute;top:-14px;right:-14px;width:42px;height:42px;border-radius:50%;border:0;background:var(--yellow);color:var(--navy);font-size:1.5rem;font-weight:1000;cursor:pointer}
 @media(max-width:520px){
   .wrap{width:min(100% - 16px,780px)}
-  .hero{min-height:540px;background-position:center 40%}
+  .hero{min-height:520px;background-position:center 40%}
   .hero-content{padding-top:24px}
-  .logo{width:min(236px,63vw)}
+  .logo{width:min(257px,69vw)}
   .contact-grid,.services,.gallery,.why-grid{grid-template-columns:1fr}
   .fab{right:8px;bottom:8px}
   .fab-toggle{width:52px;height:52px}
   .fab-item{min-height:42px;font-size:.88rem}
 }
+
+.cta-estimate{
+  background:rgba(6,26,53,.9);
+  color:#fff;
+  border:2px solid rgba(255,210,31,.75);
+  box-shadow:0 10px 24px rgba(0,0,0,.22);
+}
+.cta-estimate:hover{
+  background:var(--navy);
+  transform:translateY(-1px);
+}
+
 </style>
 </head>
 <body>
-<header class="hero"><div class="wrap"><div class="topbar"><div aria-label="Language selector" class="lang"><button class="active" id="enBtn" onclick="setLang('en')">EN</button><button id="esBtn" onclick="setLang('es')">ES</button></div></div><div class="hero-content"><img alt="JG Electric logo" class="logo" src="logo.png"/><div class="tag" data-en="FAST • RELIABLE • LOCAL" data-es="RÁPIDO • CONFIABLE • LOCAL">FAST • RELIABLE • LOCAL</div><p class="hero-copy" data-en="Licensed Residential &amp; Commercial Electrician serving Southern New Hampshire." data-es="Electricista residencial y comercial licenciado sirviendo el sur de New Hampshire.">Licensed Residential &amp; Commercial Electrician serving Southern New Hampshire.</p><div class="trust-strip"><span class="trust-pill" data-en="🛡 Licensed &amp; Insured" data-es="🛡 Licenciado y asegurado">🛡 Licensed &amp; Insured</span><span class="trust-pill" data-en="Quality You Can Trust" data-es="Calidad en la que puede confiar">Quality You Can Trust</span><span class="trust-pill" data-en="⚡ Fast Response" data-es="⚡ Respuesta rápida">⚡ Fast Response</span></div><div aria-label="Five star service" class="review-stars">★★★★★</div><div class="hero-actions"><a class="cta cta-primary" href="https://g.page/r/CYesLuhC5T9GEBM/review" rel="noopener" target="_blank"><span>★</span><span data-en="Leave a Google Review" data-es="Dejar una reseña en Google">Leave a Google Review</span></a><a class="cta cta-secondary" href="https://wa.me/16032330736?text=Hi%20JG%20Electric%21%20I%27d%20like%20to%20request%20an%20estimate." id="estimateTop" rel="noopener" target="_blank"><span>⚡</span><span data-en="Get Your Free Estimate Today" data-es="Solicitar su estimado gratis hoy">Get Your Free Estimate Today</span></a></div></div></div></header>
+<header class="hero"><div class="wrap"><div class="topbar"><div aria-label="Language selector" class="lang"><button class="active" id="enBtn" onclick="setLang('en')">EN</button><button id="esBtn" onclick="setLang('es')">ES</button></div></div><div class="hero-content"><img alt="JG Electric logo" class="logo" src="logo.png"/><div class="tag" data-en="FAST • RELIABLE • LOCAL" data-es="RÁPIDO • CONFIABLE • LOCAL">FAST • RELIABLE • LOCAL</div><p class="hero-copy" data-en="Licensed Residential &amp; Commercial Electrician serving Southern New Hampshire." data-es="Electricista residencial y comercial licenciado sirviendo el sur de New Hampshire.">Licensed Residential &amp; Commercial Electrician serving Southern New Hampshire.</p><div class="trust-strip"><span class="trust-pill" data-en="🛡 Licensed &amp; Insured" data-es="🛡 Licenciado y asegurado">🛡 Licensed &amp; Insured</span><span class="trust-pill" data-en="Quality You Can Trust" data-es="Calidad en la que puede confiar">Quality You Can Trust</span><span class="trust-pill" data-en="⚡ Fast Response" data-es="⚡ Respuesta rápida">⚡ Fast Response</span></div><div aria-label="Five star service" class="review-stars">★★★★★</div><div class="hero-actions" aria-label="Primary actions"><a class="cta cta-primary" href="https://g.page/r/CYesLuhC5T9GEBM/review" rel="noopener" target="_blank"><span>★</span><span data-en="Leave a Google Review" data-es="Dejar una reseña en Google">Leave a Google Review</span></a><a class="cta cta-secondary cta-estimate" href="https://wa.me/16032330736?text=Hi%20JG%20Electric%21%20I%27d%20like%20to%20request%20an%20estimate." id="estimateTop" rel="noopener" target="_blank"><span>⚡</span><span data-en="Get Your Free Estimate Today" data-es="Solicitar su estimado gratis hoy">Get Your Free Estimate Today</span></a></div></div></div></header>
 <main class="panel"><div class="wrap"><section class="card"><div class="contact-grid">
 <a class="action" href="tel:+16032330736"><span class="icon"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07A19.5 19.5 0 0 1 5.15 12.8 19.8 19.8 0 0 1 2.08 4.18 2 2 0 0 1 4.07 2h3a2 2 0 0 1 2 1.72c.12.9.33 1.78.62 2.63a2 2 0 0 1-.45 2.11L8 9.69a16 16 0 0 0 6 6l1.23-1.23a2 2 0 0 1 2.11-.45c.85.29 1.73.5 2.63.62A2 2 0 0 1 22 16.92z"></path></svg></span><span data-en="Call Now" data-es="Llamar ahora">Call Now</span></a>
 <a class="action" href="sms:+16032330736"><span class="icon"><svg viewBox="0 0 24 24"><path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z"></path></svg></span><span data-en="Send a Text" data-es="Enviar mensaje">Send a Text</span></a>

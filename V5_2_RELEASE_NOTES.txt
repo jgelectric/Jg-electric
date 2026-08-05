@@ -1,0 +1,17 @@
+JG Electric v5.2 — Premium Homepage Update
+
+Changes:
+- Logo increased approximately 9%
+- Hero spacing tightened so both primary buttons appear sooner
+- Google Review button remains the primary yellow action
+- Get Free Estimate button is now more visible with a yellow outline
+- Mobile hero height reduced slightly
+- Floating lightning quick-contact menu preserved
+- All social links, gallery, service pages and SEO pages preserved
+
+Upload:
+1. Unzip this package.
+2. Upload all files inside the folder to the GitHub repository root.
+3. Replace matching files.
+4. Keep all existing JPG, PNG and VCF files.
+5. Commit to the main branch.
