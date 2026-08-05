@@ -1,0 +1,1 @@
+Version 5.3 adds bilingual NFC landing page at /go/, redirect from go.html, sitemap update.

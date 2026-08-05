@@ -1,28 +1,44 @@
-JG ELECTRIC PREMIUM BILINGUAL NFC PAGE
+JG ELECTRIC v5.1 — FLAT PRODUCTION RELEASE
 
-FILES INCLUDED
-- go/index.html
-- go.html
+WHY THIS VERSION:
+Your iPhone upload placed all website files in the GitHub repository root.
+This release is intentionally FLAT, so it matches that structure and every
+page can find style.css and main.js correctly.
 
-UPLOAD
-1. Upload the entire "go" folder to the ROOT of your GitHub repository.
-2. Upload go.html to the ROOT as well.
-3. Keep your existing logo.png, truck.jpg, favicon.png, JG-Electric.vcf,
-   service pages, city pages, and homepage.
-4. Commit to the main branch.
-5. Wait 2–5 minutes.
+WHAT IT RESTORES:
+- Premium truck-image homepage
+- Large JG Electric logo
+- English/Spanish switch
+- Call, Text, WhatsApp, Email, Instagram, Facebook, Reviews, Save Contact
+- Floating lightning quick-action menu
+- Gallery with image enlargement
+- Premium navy/yellow design
+- SEO service and city pages
 
-TEST
-https://jgelectricnh.com/go/
+UPLOAD:
+1. Keep all existing image files in GitHub.
+2. Upload ALL files inside this unzipped folder to the repository root.
+3. Replace files with matching names.
+4. Do not create assets, services, locations or pages folders.
+5. Commit to main and wait 2–5 minutes.
 
-PROGRAM THE NFC TAG WITH THIS EXACT URL
-https://jgelectricnh.com/go/
+KEEP THESE EXISTING ASSETS:
+logo.png
+truck.jpg
+favicon.png
+JG-Electric.vcf
+recessed-living-room.jpg
+recessed-high-ceiling.jpg
+recessed-bathroom.jpg
+entryway.jpg
+bathroom.jpg
+chandelier.jpg
+landscape-transformer.jpg
 
-LANGUAGE
-- Spanish phones open in Spanish automatically.
-- English phones open in English automatically.
-- Visitors can switch manually with EN / ES.
-- The page remembers their choice on that phone.
+TEST:
+https://jgelectricnh.com/
+https://jgelectricnh.com/services.html
+https://jgelectricnh.com/service-areas.html
+https://jgelectricnh.com/contact.html
 
-IMPORTANT
-Do not lock the NFC tag until the URL opens correctly.
+After deployment, submit sitemap.xml again in Google Search Console.
