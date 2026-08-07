@@ -1,0 +1,1 @@
+Fixed navigation: every Home link and the JG Electric logo now return to index.html.
