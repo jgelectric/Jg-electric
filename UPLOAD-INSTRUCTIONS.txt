@@ -1,10 +1,17 @@
-JG ELECTRIC V6 UPLOAD INSTRUCTIONS
+JG ELECTRIC WEBSITE V6 FINAL
 
-1. Download and unzip this package.
-2. In your GitHub repository, upload ALL files and the assets folder to the repository root.
-3. Choose Replace when GitHub reports files with the same names.
-4. Confirm that index.html, style.css, main.js, logo.svg, favicon.svg, and the assets folder are at the root.
-5. Wait 2-5 minutes for GitHub Pages to rebuild.
-6. Open https://jgelectricnh.com and refresh the browser.
+1. Unzip this file.
+2. Upload all files and both folders (assets and go) to the ROOT of your GitHub repository.
+3. Replace the existing files with the same names.
+4. The folders must remain named exactly:
+   assets
+   go
+5. Wait 2-5 minutes for GitHub Pages to publish.
+6. Open jgelectricnh.com in a Private tab or refresh the browser cache.
 
-Important: Do not upload the outer ZIP as a folder. Upload the contents of the ZIP.
+This final package includes:
+- Exact JG Electric logo
+- Three real kitchen project photos
+- Social media section
+- Read Reviews and Write a Review buttons
+- New V6 homepage

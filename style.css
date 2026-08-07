@@ -21,3 +21,72 @@
 .social-card.google-review .social-icon{background:#ffd21f;color:#061a35}
 @media(max-width:920px){.social-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:620px){.social-grid{grid-template-columns:1fr}.social-card{min-height:170px}}
+
+/* V6 FINAL HOMEPAGE */
+.top-strip{background:#031226;color:#fff;font-size:.84rem}
+.top-strip .container{min-height:38px;display:flex;align-items:center;justify-content:space-between;gap:18px}
+.top-links{display:flex;gap:16px;align-items:center;flex-wrap:wrap}
+.top-strip a{color:#e9f0f8}
+.top-strip a:hover{color:var(--yellow)}
+.hero-v6{background:#061a35;padding:0;color:#fff;overflow:hidden}
+.hero-v6 .hero-grid{display:grid;grid-template-columns:1fr 1.12fr;min-height:650px;padding:0}
+.hero-copy-block{padding:90px 0;display:flex;flex-direction:column;justify-content:center;position:relative;z-index:2}
+.hero-copy-block h1{font-size:clamp(3rem,6vw,5.6rem);line-height:.96;letter-spacing:-.055em;margin:18px 0 22px;max-width:680px}
+.hero-copy-block h1 span{color:var(--yellow);display:block}
+.hero-copy-block>p{font-size:1.15rem;color:#d3dfed;max-width:620px;line-height:1.65}
+.hero-points{display:flex;flex-wrap:wrap;gap:12px;margin:26px 0}
+.hero-points span{padding:11px 14px;border:1px solid rgba(255,255,255,.18);border-radius:999px;background:rgba(255,255,255,.07);font-weight:850}
+.hero-visual{min-height:650px;position:relative;overflow:hidden}
+.hero-visual:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#061a35 0%,rgba(6,26,53,.3) 24%,rgba(6,26,53,.06) 60%)}
+.hero-visual img{width:100%;height:100%;object-fit:cover;display:block}
+.trust-bar{background:#071d3b;color:#fff}
+.trust-bar .trust-grid{display:grid;grid-template-columns:repeat(5,1fr)}
+.trust-item{padding:22px 16px;border-right:1px solid rgba(255,255,255,.12)}
+.trust-item:last-child{border-right:0}
+.trust-item strong,.trust-item span{display:block}
+.trust-item strong{color:var(--yellow)}
+.trust-item span{font-size:.84rem;color:#b8c9da;margin-top:3px}
+.center-actions{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:28px}
+.project-story{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin:0 0 28px}
+.project-story>div{background:#fff;border:1px solid var(--line);border-radius:20px;padding:24px}
+.project-story h3{margin:0 0 10px;color:var(--navy)}
+.project-story p{margin:0;color:var(--muted);line-height:1.65}
+.feature-list.compact{margin:0}
+.project-gallery .gallery-button{aspect-ratio:4/3}
+.dark-section{background:#061a35;color:#fff}
+.light-heading h2,.light-heading p{color:#fff}
+.reviews-social-section{background:#f5f8fc}
+.reviews-social-layout{display:grid;grid-template-columns:.75fr 1.25fr;gap:34px}
+.review-panel,.social-panel{background:#fff;border-radius:24px;padding:30px;border:1px solid var(--line);box-shadow:0 12px 35px rgba(3,18,38,.08)}
+.review-panel h2,.social-panel h2{color:var(--navy);margin:8px 0 14px}
+.large-stars{font-size:1.55rem;color:#e5aa00;letter-spacing:.08em}
+.large-stars strong{color:var(--navy);letter-spacing:0;margin-left:8px}
+.review-panel p{color:var(--muted)}
+.review-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px}
+.social-panel .social-grid{grid-template-columns:repeat(2,1fr)}
+.social-panel .social-card{min-height:180px}
+.cta-band p{margin:6px 0 0}
+.btn-light{background:#fff;color:var(--navy)}
+.primary-nav .active{color:var(--yellow)}
+@media(max-width:920px){
+  .top-strip .container{justify-content:center}
+  .top-strip .container>span{display:none}
+  .hero-v6 .hero-grid{grid-template-columns:1fr}
+  .hero-copy-block{padding:72px 0 35px}
+  .hero-visual{min-height:420px}
+  .trust-bar .trust-grid{grid-template-columns:repeat(2,1fr)}
+  .project-story,.reviews-social-layout{grid-template-columns:1fr}
+}
+@media(max-width:620px){
+  .top-links a:nth-child(2){display:none}
+  .hero-copy-block{padding:52px 0 28px}
+  .hero-copy-block h1{font-size:3.25rem}
+  .hero-copy-block>p{font-size:1rem}
+  .hero-points{gap:8px}
+  .hero-points span{font-size:.82rem}
+  .hero-visual{min-height:300px}
+  .trust-bar .trust-grid{grid-template-columns:1fr 1fr}
+  .trust-item{padding:16px 12px}
+  .social-panel .social-grid{grid-template-columns:1fr}
+  .review-panel,.social-panel{padding:22px}
+}
