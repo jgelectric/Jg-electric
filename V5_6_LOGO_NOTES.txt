@@ -1,0 +1,6 @@
+JG Electric v5.6 web logo update
+- Removed the visible white page background from the supplied logo artwork.
+- Added transparent logo.png.
+- Added responsive logo.svg for website use.
+- Updated HTML pages to use logo.svg.
+- Preserved the kitchen project and all existing website files.

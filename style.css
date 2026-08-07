@@ -59,3 +59,42 @@ button{font:inherit}
 .prose .related-links{margin:24px 0 42px}
 .prose .btn{margin:8px 8px 8px 0}
 .service-card h2{font-size:1.18rem;margin:18px 0 8px;color:var(--navy)}
+
+/* v5.6 web logo correction */
+.logo,
+.brand img,
+.footer-brand img {
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+  background: transparent !important;
+}
+.hero .logo,
+.hero-logo,
+img.logo {
+  width: min(360px, 72vw) !important;
+  max-height: 300px;
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+.brand img {
+  width: 170px !important;
+  max-height: 82px;
+}
+.footer-brand img {
+  width: 180px !important;
+}
+@media (max-width: 640px) {
+  .hero .logo,
+  .hero-logo,
+  img.logo {
+    width: min(300px, 76vw) !important;
+    max-height: 250px;
+  }
+  .brand img {
+    width: 145px !important;
+    max-height: 72px;
+  }
+}
