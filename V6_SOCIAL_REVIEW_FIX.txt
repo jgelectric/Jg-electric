@@ -1,0 +1,2 @@
+Restored homepage social media links and added a prominent Write a Google Review option.
+Includes Instagram, Facebook, WhatsApp, and Google Review cards plus footer links.

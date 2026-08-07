@@ -1,0 +1,3 @@
+V6 logo correction
+This package includes the exact JG Electric logo supplied by the owner.
+Upload and replace all existing website files.
