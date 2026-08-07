@@ -1,0 +1,1 @@
+Added the three new kitchen project photos to the homepage Our Work gallery and created kitchen-lighting-project.html. Existing gallery items were preserved.

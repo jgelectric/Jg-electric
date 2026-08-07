@@ -1,0 +1,4 @@
+JG Electric v5.4 logo sizing update
+- Reduced homepage logo size by approximately 25%
+- Improved mobile spacing
+- Preserved all existing pages, buttons, and go/ folder
