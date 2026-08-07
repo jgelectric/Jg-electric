@@ -1,0 +1,14 @@
+JG Electric Website v6.0
+
+Major updates:
+- Complete premium homepage redesign
+- New Our Work portfolio page
+- New Modern Kitchen Lighting project page
+- Three optimized project photos included
+- Consistent navigation and footer across the site
+- Updated mobile call/text/estimate controls
+- New SVG logo and favicon included
+- Improved SEO metadata and internal linking
+- Responsive gallery lightbox
+
+Upload all files and folders from this ZIP to the root of your GitHub Pages repository.
