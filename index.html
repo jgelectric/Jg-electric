@@ -176,6 +176,17 @@ button{font:inherit}
 .featured-project .project-link{display:flex;justify-content:center;margin-top:14px}
 .featured-project .project-link a{display:inline-flex;padding:11px 16px;border-radius:13px;background:var(--yellow);color:var(--navy);font-weight:950;text-decoration:none}
 
+.payment-card{margin-top:18px;padding:24px;border-radius:22px;background:linear-gradient(145deg,#071d3a,#0b2d55);border:1px solid rgba(255,255,255,.12);box-shadow:0 16px 38px rgba(6,26,53,.18);text-align:center;color:#fff}
+.payment-card h3{margin:0 0 7px;font-size:1.3rem;color:#fff}
+.payment-card p{margin:0 auto 16px;max-width:620px;color:#dce7f4;line-height:1.5}
+.card-brands{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin:0 0 17px}
+.card-brand{display:inline-flex;align-items:center;justify-content:center;min-width:74px;height:34px;padding:0 11px;border-radius:7px;background:#fff;color:#0b1d33;font-size:.78rem;font-weight:950;letter-spacing:.02em;box-shadow:0 3px 10px rgba(0,0,0,.16)}
+.card-brand.amex{font-size:.68rem}
+.payment-bank{display:inline-flex;align-items:center;gap:6px;margin-bottom:17px;color:#dce7f4;font-size:.84rem;font-weight:800}
+.payment-button{display:flex;align-items:center;justify-content:center;gap:9px;width:min(100%,360px);margin:0 auto;padding:14px 20px;border-radius:14px;background:var(--yellow);color:var(--navy);font-weight:950;text-decoration:none;box-shadow:0 8px 22px rgba(0,0,0,.18)}
+.payment-button:hover{transform:translateY(-1px)}
+.payment-note{display:block;margin-top:11px;color:#afc3d8;font-size:.74rem}
+
 </style>
 </head>
 <body>
@@ -199,6 +210,15 @@ button{font:inherit}
 <a class="action" href="contact.html"><span class="icon">✉</span><span data-en="Contact" data-es="Contacto">Contact</span></a>
 <a class="action" href="estimate.html"><span class="icon">⚡</span><span data-en="Request Estimate" data-es="Solicitar estimado">Request Estimate</span></a>
 <a class="action" href="https://your.acornfinance.com/calculator?d=C0WAQ&amp;utm_source=mobile-app-copy" rel="noopener" target="_blank"><span class="icon">$</span><span data-en="Financing Options" data-es="Opciones de financiamiento">Financing Options</span></a>
+<a class="action" href="https://app.autobooks.co/pay/jg-electric" rel="noopener" target="_blank"><span class="icon">💳</span><span data-en="Make a Payment" data-es="Realizar un pago">Make a Payment</span></a>
+</div>
+<div class="payment-card" aria-label="Secure online payments">
+<h3 data-en="Secure Online Payments" data-es="Pagos seguros en línea">Secure Online Payments</h3>
+<p data-en="Pay your JG Electric invoice securely online by credit/debit card or bank transfer." data-es="Pague su factura de JG Electric de forma segura en línea con tarjeta de crédito/débito o transferencia bancaria.">Pay your JG Electric invoice securely online by credit/debit card or bank transfer.</p>
+<div class="card-brands" aria-label="Accepted card brands"><span class="card-brand">VISA</span><span class="card-brand">Mastercard</span><span class="card-brand amex">AMERICAN EXPRESS</span><span class="card-brand">DISCOVER</span></div>
+<div class="payment-bank"><span>✓</span><span data-en="Bank transfer available" data-es="Transferencia bancaria disponible">Bank transfer available</span></div>
+<a class="payment-button" href="https://app.autobooks.co/pay/jg-electric" rel="noopener" target="_blank"><span>💳</span><span data-en="MAKE A PAYMENT" data-es="REALIZAR UN PAGO">MAKE A PAYMENT</span></a>
+<span class="payment-note" data-en="Payments are processed securely through Autobooks." data-es="Los pagos se procesan de forma segura a través de Autobooks.">Payments are processed securely through Autobooks.</span>
 </div>
 </section>
 <section class="section"><h2 data-en="Electrical Services" data-es="Servicios eléctricos">Electrical Services</h2><div class="services">
