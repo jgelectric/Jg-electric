@@ -183,9 +183,10 @@ button{font:inherit}
 .payment-card{margin-top:18px;padding:24px;border-radius:22px;background:linear-gradient(145deg,#071d3a,#0b2d55);border:1px solid rgba(255,255,255,.12);box-shadow:0 16px 38px rgba(6,26,53,.18);text-align:center;color:#fff}
 .payment-card h3{margin:0 0 7px;font-size:1.3rem;color:#fff}
 .payment-card p{margin:0 auto 16px;max-width:620px;color:#dce7f4;line-height:1.5}
-.card-brands{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin:0 0 17px}
-.card-brand{display:inline-flex;align-items:center;justify-content:center;min-width:74px;height:34px;padding:0 11px;border-radius:7px;background:#fff;color:#0b1d33;font-size:.78rem;font-weight:950;letter-spacing:.02em;box-shadow:0 3px 10px rgba(0,0,0,.16)}
-.card-brand.amex{font-size:.68rem}
+.card-brands{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:9px;margin:0 0 17px}
+.card-logo{display:inline-flex;align-items:center;justify-content:center;width:72px;height:42px;padding:5px 8px;border-radius:8px;background:#fff;box-shadow:0 3px 10px rgba(0,0,0,.16)}
+.card-logo svg{display:block;width:100%;height:100%}
+.card-logo.contactless{width:48px;padding:7px}
 .payment-bank{display:inline-flex;align-items:center;gap:6px;margin-bottom:17px;color:#dce7f4;font-size:.84rem;font-weight:800}
 .payment-button{display:flex;align-items:center;justify-content:center;gap:9px;width:min(100%,360px);margin:0 auto;padding:14px 20px;border-radius:14px;background:var(--yellow);color:var(--navy);font-weight:950;text-decoration:none;box-shadow:0 8px 22px rgba(0,0,0,.18)}
 .payment-button:hover{transform:translateY(-1px)}
@@ -223,7 +224,14 @@ button{font:inherit}
 <div class="payment-card" aria-label="Secure online payments">
 <h3 data-en="Secure Online Payments" data-es="Pagos seguros en línea">Secure Online Payments</h3>
 <p data-en="Pay your JG Electric invoice securely online by credit/debit card or bank transfer." data-es="Pague su factura de JG Electric de forma segura en línea con tarjeta de crédito/débito o transferencia bancaria.">Pay your JG Electric invoice securely online by credit/debit card or bank transfer.</p>
-<div class="card-brands" aria-label="Accepted card brands"><span class="card-brand">VISA</span><span class="card-brand">Mastercard</span><span class="card-brand amex">AMERICAN EXPRESS</span><span class="card-brand">DISCOVER</span></div>
+<div class="card-brands" aria-label="Accepted payment methods">
+<span class="card-logo" title="Visa" aria-label="Visa"><svg viewBox="0 0 84 34" role="img"><text x="42" y="24" text-anchor="middle" font-family="Arial,sans-serif" font-size="23" font-weight="900" font-style="italic" fill="#1434CB">VISA</text></svg></span>
+<span class="card-logo" title="Mastercard" aria-label="Mastercard"><svg viewBox="0 0 84 34" role="img"><circle cx="34" cy="17" r="13" fill="#EB001B"/><circle cx="50" cy="17" r="13" fill="#F79E1B"/><path d="M42 7.4a13 13 0 0 1 0 19.2 13 13 0 0 1 0-19.2z" fill="#FF5F00"/></svg></span>
+<span class="card-logo" title="American Express" aria-label="American Express"><svg viewBox="0 0 84 34" role="img"><rect x="4" y="3" width="76" height="28" rx="3" fill="#2E77BC"/><text x="42" y="15" text-anchor="middle" font-family="Arial,sans-serif" font-size="9" font-weight="900" fill="#fff">AMERICAN</text><text x="42" y="25" text-anchor="middle" font-family="Arial,sans-serif" font-size="10" font-weight="900" fill="#fff">EXPRESS</text></svg></span>
+<span class="card-logo" title="Discover" aria-label="Discover"><svg viewBox="0 0 84 34" role="img"><text x="42" y="21" text-anchor="middle" font-family="Arial,sans-serif" font-size="13" font-weight="800" fill="#111">DISCOVER</text><circle cx="47" cy="17" r="6" fill="#F58220" opacity=".95"/></svg></span>
+<span class="card-logo" title="Apple Pay" aria-label="Apple Pay"><svg viewBox="0 0 84 34" role="img"><text x="42" y="22" text-anchor="middle" font-family="Arial,sans-serif" font-size="17" font-weight="700" fill="#111">Pay</text></svg></span>
+<span class="card-logo contactless" title="Contactless payments" aria-label="Contactless payments"><svg viewBox="0 0 40 34" role="img" fill="none" stroke="#111" stroke-width="2.7" stroke-linecap="round"><path d="M12 10c5 4 5 10 0 14"/><path d="M18 7c8 6 8 14 0 20"/><path d="M24 4c11 8 11 18 0 26"/><circle cx="7" cy="17" r="2" fill="#111" stroke="none"/></svg></span>
+</div>
 <div class="payment-bank"><span>✓</span><span data-en="Bank transfer available" data-es="Transferencia bancaria disponible">Bank transfer available</span></div>
 <a class="payment-button" href="https://app.autobooks.co/pay/jg-electric" rel="noopener" target="_blank"><span aria-hidden="true"><svg viewBox="0 0 24 24" width="20" height="20" style="fill:none;stroke:currentColor;stroke-width:2"><rect x="2.5" y="5" width="19" height="14" rx="2"></rect><path d="M2.5 9h19"></path></svg></span><span data-en="MAKE A PAYMENT" data-es="REALIZAR UN PAGO">MAKE A PAYMENT</span></a>
 <span class="payment-note" data-en="Payments are processed securely through Autobooks." data-es="Los pagos se procesan de forma segura a través de Autobooks.">Payments are processed securely through Autobooks.</span>
